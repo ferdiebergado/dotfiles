@@ -1,0 +1,48 @@
+# ----------------------------------------------------------------------
+# file:    ~/.config/newsbeuter/config
+# vim: set ai et fenc=utf-8 ft=conf nu si sts=0 sw=4 ts=8 tw=0 :
+# ----------------------------------------------------------------------
+
+max-items        100 # such comments are possible, too
+browser          "/usr/local/bin/w3m -no-cookie -sixel %u"
+show-read-feeds  no
+external-url-viewer "grep http | fzf | cut -d' ' -f2 | xargs -ro /usr/local/bin/w3m -no-cookie -sixel"
+#include         /usr/share/doc/newsboat/contrib/colorschemes/plain
+# pager           "/usr/local/bin/w3m -T text/html"
+# html-renderer   "/usr/bin/cat"  
+auto-reload     yes
+reload-time     20
+reload-threads  100
+
+# hide articles matching: ---------------------------------------------
+
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-mode "display"
+
+# formatting and colorization ------------------------------------------
+# feedlist-format     "%4i %n %11u %T %t"
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+# highlight feedlist      "---.*---"                              yellow default bold
+# highlight feedlist      ".*0/0.."                               default default invis
+# highlight feedlist      "^.*\\(0/0\\)"                          default default invis
+highlight feedlist      "^  *[0-9]+  *N  "                      color156 default
+highlight articlelist   "^  *[0-9]+  *N  "                      color156 default
+
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color75  default
+highlight article     "(^Link:.*|^Date:.*)"                 color75  default
+highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^Links:"                             white    color240 underline
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
+highlight article     ":.*\\(link\\)$"                      color74  default
+highlight article     ":.*\\(image\\)$"                     color74  default
+highlight article     ":.*\\(embedded flash\\)$"            color74  default
+
+color listnormal                                            white    default
+color listfocus                                             default  color240
+color info                                                  default  color240
+
+macro y set browser "/usr/bin/mpv --force-window=immediate %u"; open-in-browser ; set browser "w3m -no-cookie -sixel %u"

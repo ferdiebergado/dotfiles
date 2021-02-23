@@ -1,0 +1,22 @@
+http://rss.cnn.com/rss/cnn_topstories.rss
+http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml
+https://www.reutersagency.com/feed/?taxonomy=best-topics&post_type=best
+https://archlinux.org/feeds/news
+https://archlinux.org/feeds/packages/
+https://aur.archlinux.org/rss/
+https://bugs.archlinux.org/feed.php?feed_type=rss2&project=0 "~Arch Linux BugTracker (Opened)"
+https://bugs.archlinux.org/feed.php?feed_type=rss2&topic=edit&project=0 "~Arch Linux BugTracker (Edited)"
+https://bugs.archlinux.org/feed.php?feed_type=rss2&topic=clo&project=0 "~Arch Linux BugTracker (Closed)"
+https://www.reddit.com/r/archlinux/.rss
+https://forum.manjaro.org/c/announcements.rss
+https://www.reddit.com/r/linux/.rss
+https://www.reddit.com/r/linuxmasterrace/.rss
+https://www.reddit.com/r/swaywm/.rss
+https://www.reddit.com/r/commandline/.rss
+https://www.reddit.com/r/neovim/.rss
+https://www.reddit.com/r/qutebrowser/.rss
+https://www.reddit.com/r/Deno/.rss
+https://www.reddit.com/r/graphql/.rss
+https://www.reddit.com/r/dgraph/.rss
+https://www.reddit.com/r/graphdatabases/.rss
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA
