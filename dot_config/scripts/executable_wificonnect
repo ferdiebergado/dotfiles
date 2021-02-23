@@ -1,0 +1,78 @@
+#!/bin/bash
+
+start() {
+    [[ -z $(systemctl status $1 | grep -ow active) ]] && systemctl start $1.service
+}
+
+stop() {
+    [[ -n $(systemctl status $1 | grep -ow active) ]] && systemctl stop $1.service
+}
+
+# Stop Network Services
+echo -e "\nStopping network services...\n"
+#killall -q wpa_supplicant
+stop iwd
+#dhcpcd -k "$IFACE"
+dhclient -r "$IFACE"
+#dhcpcd -x "$IFACE"
+#stop systemd-timesyncd &
+stop unbound
+#systemctl stop stubby &
+#stop dnscrypt-proxy
+stop iptables
+stop ipset
+
+# Change MAC Address
+echo -e "\nChanging MAC address...\n"
+ip link set dev "$IFACE" down
+macchanger -A "$IFACE"
+# for captive portals
+# macchanger -m 90:ac:3f:0e:3f:91 "$IFACE"
+#macchanger -m 0c:bd:51:d9:8a:1f "$IFACE"
+ip link set dev "$IFACE" up
+
+# Connect to wireless network
+echo -e "\nConnecting to wireless network...\n"
+#wpa_supplicant -Dnl80211,wext -i wls1 -c <(wpa_passphrase "PLDTHOMEFIBR_9f2d70" "caseypatricebrinas") &
+#wpa_supplicant -B -i "$IFACE" -c /etc/wpa_supplicant/minimal.conf
+start iwd
+iwctl connect "$IFACE" cherrymobile_flare
+echo -e "\nObtaining IP address...\n"
+#dhcpcd -w "$IFACE"
+dhclient -v "$IFACE"
+
+# Secure DNS Queries
+echo -e "\nStarting Secure DNS queries daemon...\n"
+#systemctl start dnscrypt-proxy.socket
+
+#[[ -n $GW ]] && arptables -A INPUT ! -s $GW -j DROP; arptables -A OUTPUT ! -d $GW -j DROP &
+
+# Local Caching DNS Server
+echo -e "\nStarting local caching DNS Service...\n"
+systemctl start unbound
+sleep 3
+
+# VPN
+echo -e "\nConnecting to VPN...\n"
+U="d0np0br3"
+# VPN_LIST="/tmp/vpngate.csv"
+# VPN_CONFIG="/tmp/vpngate.conf"
+# /usr/bin/wget -O $VPN_LIST http://www.vpngate.net/api/iphone && cat $VPN_LIST | sort -k5 -t, -n | grep -w TH | tail -n 1 | awk -F ',' '{$15}' | base64 -di > $VPN_CONFIG
+echo -e "\nFetching vpn configuration...\n"
+sudo -u $U /home/$U/.config/scripts/vpnconfig
+# sleep 3
+echo -e "\nStarting VPN connection...\n"
+chown -v $U:root /tmp/vpngate.*
+cp -v /tmp/vpngate.conf /etc/openvpn/client/vpngate.conf && systemctl start openvpn-client@vpngate
+
+# Firewall
+echo -e "\nLaunching firewall...\n"
+systemctl start ipset &
+systemctl start iptables &
+
+# SMART Disk Monitor
+echo -e "\nStarting SMART Disk Monitor...\n"
+start smartd &
+
+# Power Manager
+# start tlp &

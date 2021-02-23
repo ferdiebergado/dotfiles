@@ -1,0 +1,17 @@
+noblacklist ${HOME}/.qt5ct
+
+include /etc/firejail/allow-lua.inc
+
+noblacklist ${HOME}/.config/mpv
+noblacklist ${HOME}/.config/youtube-dl
+noblacklist ${HOME}/.config/fontconfig
+
+whitelist ${HOME}/.config/mpv
+whitelist ${HOME}/.config/youtube-dl
+whitelist ${HOME}/.config/fontconfig
+
+noblacklist ${PATH}/mpv
+noblacklist ${PATH}/youtube-dl
+noblacklist ${PATH}/notify-send
+
+#include fontconfig.inc

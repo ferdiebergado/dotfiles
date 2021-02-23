@@ -1,0 +1,150 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+.titlebar	gtk.css	/^.titlebar {$/;"	c
+.window-frame	gtk.css	/^.window-frame, .window-frame:backdrop {$/;"	c
+.window-frame:backdrop	gtk.css	/^.window-frame, .window-frame:backdrop {$/;"	c
+ActiveWindow	statusclock.sh	/^ActiveWindow() {$/;"	f
+AppServiceProvider	AppServiceProvider.php	/^class AppServiceProvider extends ServiceProvider$/;"	c	namespace:App\\Providers
+App\\Providers	AppServiceProvider.php	/^namespace App\\Providers;$/;"	n
+App\\Providers	HelperServiceProvider.php	/^namespace App\\Providers;$/;"	n
+App\\Repositories	EloquentRepository.php	/^namespace App\\Repositories;$/;"	n
+Battery	statusclock.sh	/^Battery() {$/;"	f
+Blade	AppServiceProvider.php	/^use Illuminate\\Support\\Facades\\Blade;$/;"	a	namespace:App\\Providers	typeref:unknown:Illuminate\\Support\\Facades\\Blade
+Clock	lemonbar.sh	/^Clock() {$/;"	f
+Clock	statusbar.sh	/^Clock() {$/;"	f
+Clock	statusclock.sh	/^Clock() {$/;"	f
+CpuUsage	lemonbar.sh	/^CpuUsage() {$/;"	f
+CurrentWindow	lemonbar.sh	/^CurrentWindow() {$/;"	f
+DiskFree	lemonbar.sh	/^DiskFree() {$/;"	f
+Disktemp	statusclock.sh	/^Disktemp() {$/;"	f
+EOF	bash-colorscheme.sh	/^cat << EOF$/;"	h
+EOF	dmenu-udevil.sh	/^    cat <<-EOF$/;"	h
+EOF	ipset.sh	/^cat << EOF$/;"	h
+EloquentRepository	EloquentRepository.php	/^class EloquentRepository extends BaseRepository$/;"	c	namespace:App\\Repositories
+HelperServiceProvider	HelperServiceProvider.php	/^class HelperServiceProvider extends ServiceProvider$/;"	c	namespace:App\\Providers
+MemFree	lemonbar.sh	/^MemFree() {$/;"	f
+Network	lemonbar.sh	/^Network() {$/;"	f
+PHP	larafold	/^cat > app\/BaseModel.php << PHP$/;"	h
+PHP	larafold	/^cat > app\/Repositories\/BaseRepository.php << PHP$/;"	h
+PHP	larafold	/^cat > app\/Repositories\/BaseRepositoryInterface.php << PHP$/;"	h
+PHP	larafold6	/^cat > app\/BaseModel.php << PHP$/;"	h
+PHP	larafold6	/^cat > app\/Http\/ViewComponents\/ViewComponent.php << PHP$/;"	h
+PHP	larafold6	/^cat > app\/Repositories\/BaseRepository.php << PHP$/;"	h
+PHP	larafold6	/^cat > app\/Repositories\/BaseRepositoryInterface.php << PHP$/;"	h
+PHP	larafold6_	/^cat > app\/BaseModel.php << PHP$/;"	h
+PHP	larafold6_	/^cat > app\/Http\/ViewComponents\/ViewComponent.php << PHP$/;"	h
+PHP	larafold6_	/^cat > app\/Repositories\/BaseRepository.php << PHP$/;"	h
+PHP	larafold6_	/^cat > app\/Repositories\/BaseRepositoryInterface.php << PHP$/;"	h
+PHP	larafold6_	/^cat > app\/Repositories\/EloquentRepository.php << PHP$/;"	h
+RT_OPTS=	start_rt.sh	/^RT_OPTS=( )$/;"	f
+ServiceProvider	AppServiceProvider.php	/^use Illuminate\\Support\\ServiceProvider;$/;"	a	namespace:App\\Providers	typeref:unknown:Illuminate\\Support\\ServiceProvider
+ServiceProvider	HelperServiceProvider.php	/^use Illuminate\\Support\\ServiceProvider;$/;"	a	namespace:App\\Providers	typeref:unknown:Illuminate\\Support\\ServiceProvider
+SsdTemp	lemonbar.sh	/^SsdTemp() {$/;"	f
+Temp	lemonbar.sh	/^Temp() {$/;"	f
+Temp	statusclock.sh	/^Temp() {$/;"	f
+VpnStatus	lemonbar.sh	/^VpnStatus() {$/;"	f
+WifiSSID	lemonbar.sh	/^WifiSSID() {$/;"	f
+Workspaces	lemonbar.sh	/^Workspaces() {$/;"	f
+Workspaces	statusclock.sh	/^Workspaces() {$/;"	f
+_EOF	azirevpn-wg.sh	/^	cat > "$CONFIGURATION_FILE.tmp" <<-_EOF$/;"	h
+_at_exit	start_rt.sh	/^_at_exit() {$/;"	f
+_sleep	lightsOn.sh	/^_sleep()$/;"	f
+accept_remotes	vpnfailsafe.sh	/^    accept_remotes() {$/;"	f
+all	EloquentRepository.php	/^    public function all($columns = array('*'), string $orderBy = 'id', string $sortBy = 'desc')$/;"	f	class:App\\Repositories\\EloquentRepository
+boot	AppServiceProvider.php	/^    public function boot()$/;"	f	class:App\\Providers\\AppServiceProvider
+bpf_jit_harden	hardening.conf	/^net.core.bpf_jit_harden=2$/;"	k
+build_app_cache	archmenu	/^build_app_cache() {$/;"	f
+build_aur_cache	archmenu	/^build_aur_cache() {$/;"	f
+build_explicit_cache	archmenu	/^build_explicit_cache() {$/;"	f
+build_installed_cache	archmenu	/^build_installed_cache() {$/;"	f
+build_ipset	ipset.sh	/^build_ipset() {$/;"	f
+build_native_cache	archmenu	/^build_native_cache() {$/;"	f
+build_orphaned_cache	archmenu	/^build_orphaned_cache() {$/;"	f
+checkDelayProgs	lightsOn.sh	/^checkDelayProgs()$/;"	f
+checkFullscreen	lightsOn.sh	/^checkFullscreen()$/;"	f
+checkOutputs	lightsOn.sh	/^checkOutputs()$/;"	f
+check_deps	archmenu	/^check_deps() {$/;"	f
+check_xfd	view.sh	/^check_xfd()$/;"	f
+check_xfd	viewfont	/^check_xfd()$/;"	f
+cl	lua-colorscheme.lua	/^function cl(e)$/;"	f
+cleanup	vpnfailsafe.sh	/^cleanup() {$/;"	f
+clear_cache	archmenu	/^clear_cache() {$/;"	f
+clear_installed_cache	archmenu	/^clear_installed_cache() {$/;"	f
+connectvpn	wificonnectHome	/^connectvpn() {$/;"	f
+core_pattern	hardening.conf	/^kernel.core_pattern=|\/bin\/false$/;"	k
+create	EloquentRepository.php	/^    public function create(array $attributes)$/;"	f	class:App\\Repositories\\EloquentRepository
+createdir	archmenu	/^createdir() {$/;"	f
+delayScreensaver	lightsOn.sh	/^delayScreensaver()$/;"	f
+delay_progs=	lightsOn.sh	/^delay_progs=()$/;"	f
+delete	EloquentRepository.php	/^    public function delete(int $id)$/;"	f	class:App\\Repositories\\EloquentRepository
+die	azirevpn-wg.sh	/^die() {$/;"	f
+dmenu_mnt	dmenu-udevil.sh	/^dmenu_mnt() {$/;"	f
+download_lists	ipset.sh	/^download_lists() {$/;"	f
+drop_other	vpnfailsafe.sh	/^    drop_other() {$/;"	f
+echo	term-256.py	/^def echo(msg):$/;"	f
+err_msg	vpnfailsafe.sh	/^err_msg() {$/;"	f
+find	EloquentRepository.php	/^    public function find(int $id)$/;"	f	class:App\\Repositories\\EloquentRepository
+findBy	EloquentRepository.php	/^    public function findBy(array $data)$/;"	f	class:App\\Repositories\\EloquentRepository
+findOneOrFail	EloquentRepository.php	/^    public function findOneOrFail(int $id)$/;"	f	class:App\\Repositories\\EloquentRepository
+firstOrCreate	EloquentRepository.php	/^    public function firstOrCreate(array $attributes)$/;"	f	class:App\\Repositories\\EloquentRepository
+get_total_packages	archmenu	/^get_total_packages() {$/;"	f
+icmp_rule	vpnfailsafe.sh	/^        icmp_rule() {$/;"	f
+insert_chain	vpnfailsafe.sh	/^    insert_chain() {$/;"	f
+isAppRunning	lightsOn.sh	/^isAppRunning()$/;"	f
+kptr_restrict	hardening.conf	/^kernel.kptr_restrict=1$/;"	k
+list_devices	diskio.sh	/^function list_devices {$/;"	f
+log	lightsOn.sh	/^log() {$/;"	f
+main	ipset.sh	/^main() {$/;"	f
+main	vpnfailsafe.sh	/^main() {$/;"	f
+mix	webpack.mix.js	/^const mix = require('laravel-mix');$/;"	C
+mmap_rnd_bits	hardening.conf	/^vm.mmap_rnd_bits=32$/;"	k
+mmap_rnd_compat_bits	hardening.conf	/^vm.mmap_rnd_compat_bits=16$/;"	k
+naughtyfy_send	break.sh	/^function naughtyfy_send() {$/;"	f
+out	term-256.py	/^def out(n):$/;"	f
+output	cmus-status-display	/^output()$/;"	f
+output	cmus_status_with_lua	/^output()$/;"	f
+pass_private_nets	vpnfailsafe.sh	/^    pass_private_nets() { $/;"	f
+payload	exploit.py	/^payload = {'form_id': 'user_register_form', '_drupal_ajax': '1', 'mail[#post_render][]': 'exec',/;"	v
+power_aware_delay	bevelbar-status	/^power_aware_delay()$/;"	f
+print_border	archmenu	/^print_border() {$/;"	f
+print_fg	lua-colorscheme.lua	/^function print_fg(bg, pre)$/;"	f
+r	exploit.py	/^r = requests.post(url, data=payload)$/;"	v
+register	AppServiceProvider.php	/^    public function register()$/;"	f	class:App\\Providers\\AppServiceProvider
+register	HelperServiceProvider.php	/^    public function register()$/;"	f	class:App\\Providers\\HelperServiceProvider
+reject_dns	vpnfailsafe.sh	/^    reject_dns() {$/;"	f
+runcheck	lightsOn.sh	/^runcheck()$/;"	f
+set_route_vars	vpnfailsafe.sh	/^set_route_vars() {$/;"	f
+set_wireguard	wificonnectHome	/^set_wireguard() {$/;"	f
+sethardeningconf	wificonnectHome	/^sethardeningconf() {$/;"	f
+show_banner	ipset.sh	/^show_banner() {$/;"	f
+show_menu	archmenu	/^show_menu() {$/;"	f
+show_prompt	archmenu	/^show_prompt() {$/;"	f
+showfont	view.sh	/^showfont()$/;"	f
+showfont	viewfont	/^showfont()$/;"	f
+start	wificonnect	/^start() {$/;"	f
+start	wificonnectHome	/^start() {$/;"	f
+start	wificonnect_ECOTECH_WiFi	/^start() {$/;"	f
+stop	wificonnect	/^stop() {$/;"	f
+stop	wificonnectHome	/^stop() {$/;"	f
+stoppsd	dmenulogout.sh	/^function stoppsd() {$/;"	f
+target	exploit.py	/^target = input('Enter target url (example: https:\/\/domain.ltd\/): ')$/;"	v
+traperr	ipset.sh	/^traperr() {$/;"	f
+unprivileged_bpf_disabled	hardening.conf	/^kernel.unprivileged_bpf_disabled=1$/;"	k
+update	EloquentRepository.php	/^    public function update(array $attributes, int $id)$/;"	f	class:App\\Repositories\\EloquentRepository
+update_firewall	vpnfailsafe.sh	/^update_firewall() {$/;"	f
+update_hosts	vpnfailsafe.sh	/^update_hosts() {$/;"	f
+update_mirrors	archmenu	/^update_mirrors() {$/;"	f
+update_resolv	vpnfailsafe.sh	/^update_resolv() {$/;"	f
+update_routes	vpnfailsafe.sh	/^update_routes() {$/;"	f
+url	exploit.py	/^url = target + 'user\/register?element_parents=account\/mail\/%23value&ajax_form=1&_wrapper_form/;"	v
+usage	dmenu-udevil.sh	/^usage() {$/;"	f
+wait_input	archmenu	/^wait_input() {$/;"	f
+xfd_color	view.sh	/^xfd_color()$/;"	f
+xfd_color	viewfont	/^xfd_color()$/;"	f
+y	term-256.py	/^    y=16$/;"	v

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cheat_path=$HOME/Downloads/guides/cheats
+
+less $cheat_path/$1.txt
+
+#vim: ft=sh

@@ -1,0 +1,9 @@
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/feodo.ipset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/iblocklist_abuse_palevo.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/sslbl.ipset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/zeus_badips.ipset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/dshield.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/spamhaus_drop.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/spamhaus_edrop.netset
+https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/blocklist_de.ipset
+#https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/ransomware_rw.ipset

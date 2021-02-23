@@ -1,0 +1,26 @@
+#!/bin/bash
+
+encfs=$(mount | sed -rn "s#^encfs on $HOME/crypt/mount/([^ ]+) .*#\1#p" | sort)
+[[ -n "$encfs" ]] && echo "2encfs: $(echo ${encfs[*]} | sed 's/ /, /g')"
+
+mailinfo=$(newmail)
+[[ -n "$mailinfo" ]] && echo "2$mailinfo"
+
+ifs=$(upifs |
+    while read -r
+    do
+        info=$(wlinfo "$REPLY" 2>/dev/null)
+
+        bssid=$(echo "$info" | sed -n 's/^bssid //p')
+        ssid=$(echo "$info" | sed -n 's/^ssid //p')
+        name=$(sed -n "s/^${bssid,,} //pI" ~/.wifi-mac-names 2>/dev/null)
+
+        out=$REPLY
+        [[ -n "$ssid" ]] && out+=": $ssid"
+        [[ -n "$name" ]] && out+="/$name"
+        echo "$out"
+    done)
+if [[ -n "$ifs" ]]
+then
+    echo "2$(echo "$ifs" | sed '$!s/$/, /' | tr -d '\n')"
+fi

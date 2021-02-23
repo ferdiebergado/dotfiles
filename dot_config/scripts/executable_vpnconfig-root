@@ -1,0 +1,9 @@
+#!/bin/sh
+U="d0np0br3"
+CONF="/tmp/vpngate.conf"
+sudo -u $U /home/$U/.config/scripts/vpnconfig
+chown "$U":root $CONF
+#sed "s/#auth-user-pass/auth-user-pass \/etc\/openvpn\/client\/auth.txt/g" $CONF > /dev/null
+cp $CONF /etc/openvpn/client/
+systemctl daemon-reload
+systemctl restart openvpn-client@vpngate

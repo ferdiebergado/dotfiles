@@ -1,0 +1,180 @@
+#!/bin/bash
+# Laravel
+laravel new "$1"
+
+cd "$1"
+
+git init
+git add .
+git commit -m "Fresh install"
+
+# Debugbar
+echo -e "Installing laravel debugbar...\n"
+composer require barryvdh/laravel-debugbar --dev
+php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+git add -u
+git add untracked
+git commit -m "Installed Laravel Debugbar"
+
+# Model Caching
+echo -e "Installing laravel model caching...\n"
+composer require genealabs/laravel-model-caching:*
+cat > app/BaseModel.php << PHP
+<?php namespace App;
+
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+
+abstract class BaseModel
+{
+    use Cachable;
+    //
+}
+PHP
+git add -u
+git add untracked
+git commit -m "Install Laravel Model Caching"
+
+mkdir app/Repositories
+cat > app/Repositories/BaseRepository.php << PHP
+<?php
+namespace App\Repositories;
+use App\BaseModel;
+use App\Repositories\BaseRepositoryInterface;
+
+abstract class BaseRepository implements BaseRepositoryInterface
+{
+    protected \$model;
+    /**
+     * BaseRepository constructor.
+     * @param Model \$model
+     */
+    public function __construct(BaseModel \$model)
+    {
+        \$this->model = \$model;
+    }
+}
+PHP
+cat > app/Repositories/BaseRepositoryInterface.php << PHP
+<?php
+
+namespace App\Repositories;
+
+interface BaseRepositoryInterface
+{
+    /**
+    * Create a model instance
+     * @param array \$attributes
+     * @return mixed
+     */
+    public function create(array \$attributes);
+
+    /**
+     * Update a model instance
+     * @param array \$attributes
+     * @param int \$id
+     * @return mixed
+     */
+    public function update(array \$attributes, int \$id);
+
+    /**
+     * Return all model rows
+     * @param array \$columns
+     * @param string \$orderBy
+     * @param string \$sortBy
+     * @return mixed
+     */
+    public function all(\$columns = array('*'), string \$orderBy = 'id', string \$sortBy = 'desc');
+
+    /**
+     * Find one by ID
+     * @param int \$id
+     * @return mixed
+     */
+    public function find(int \$id);
+
+    /**
+     * Find one by ID or throw exception
+     * @param int \$id
+     * @return mixed
+     */
+    public function findOneOrFail(int \$id);
+
+    /**
+     * Find based on a different column
+     * @param array \$data
+     * @return mixed
+     */
+    public function findBy(array \$data);
+
+    /**
+     * Find one based on a different column
+     * @param array \$data
+     * @return mixed
+     */
+    public function findOneBy(array \$data);
+
+    /**
+     * Find one based on a different column or through exception
+     * @param array \$data
+     * @return mixed
+     */
+    public function findOneByOrFail(array \$data);
+
+    /**
+     * Delete one by Id
+     * @param int \$id
+     * @return mixed
+     */
+    public function delete(int \$id);
+}
+PHP
+php artisan make:provider RepositoryServiceProvider
+sed -i "s/\/\/AppServiceProviders/App\Providers\RepositoryServiceProvider::class,\n\/\/AppServiceProviders/" config/app.php
+git add -u
+git add untracked
+git commit -m "Added BaseRepository"
+
+# Email verification
+echo -e "Enabling email verification...\n"
+sed -i "s/Auth::routes();/Auth::routes(['verify' => true]);/" routes/web.php
+sed -i "s/class User extends Authenticatable/class User extends Authenticatable implements MustVerifyEmail/" app/User.php
+git add -u
+git add untracked
+git commit -m "Enabled email verification"
+
+# Authentication
+echo -e "Scaffolding auth and auth-tests...\n"
+composer require dczajkowski/auth-tests --dev
+php artisan make:auth # if not ran previously
+php artisan make:auth-tests -a
+sed -i "s/$table->timestamps();/\n$table->integer('role')->default(9);\n$table->boolean('active')->default(true);\n$table->timestamps();/" database/migrations/*create_users_table.php
+git add -u
+git add untracked
+git commit -m "Scaffolded auth and auth-tests"
+
+# Model factory
+echo -e "Installing model factory helper...\n"
+composer require --dev mpociot/laravel-test-factory-helper
+git add -u
+git add untracked
+git commit -m "Installed Laravel Test Factory Helper"
+
+# Configure for shared hosting
+cp ~/.config/scripts/AppServiceProvider.php app/Providers/
+sed -i "s/app\/public/app\/public_html/" config/filesystems.php
+sed -i "s/\/public/\/public_html" server.php
+sed -i "s/public\//public_html\//" webpack.mix.js
+mv public public_html
+git add -u
+git add untracked
+git commit -m "Configured for shared hosting"
+
+# Environment
+echo -e "Modifying .env...\n"
+sed -i "s/MAIL_HOST=smtp.mailtrap.io/MAIL_HOST=localhost/" .env
+sed -i "s/MAIL_PORT=2525/MAIL_PORT=1025/" .env
+git add -u
+git add untracked
+git commit -m "Configured email dev server"
+
+echo -e "Done."

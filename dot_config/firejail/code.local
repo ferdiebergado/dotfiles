@@ -1,0 +1,2 @@
+#noblacklist ${HOME}/.config/composer/vendor/bin
+noblacklist ${HOME}/Projects

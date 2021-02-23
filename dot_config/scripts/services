@@ -1,0 +1,9 @@
+# start service when not active
+start() {
+    [[ -z $(systemctl $2 status $1 | grep -ow active) ]] && systemctl $2 start $1.service
+}
+
+# stop service when active
+stop() {
+    [[ -n $(systemctl status $1 | grep -ow active) ]] && systemctl stop $1.service
+}

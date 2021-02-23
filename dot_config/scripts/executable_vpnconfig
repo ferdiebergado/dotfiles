@@ -1,0 +1,18 @@
+#!/bin/sh
+VPN_LIST="/tmp/vpngate.csv"
+VPN_SELECT="/tmp/vpngate.txt"
+VPN_CONFIG="/tmp/vpngate.conf"
+[[ ! -e $VPN_LIST || ! -s $VPN_LIST ]] && wget -O $VPN_LIST http://www.vpngate.net/api/iphone
+(cat $VPN_LIST | grep -w 'JP' | sort -k5 -t, -n | tail -n 10 | sort -k4 -t, -n -r | sort -R | tail -n 1) >$VPN_SELECT
+cat $VPN_SELECT | awk -F ',' '{print $15}' | base64 -di >$VPN_CONFIG
+echo -e "\n$(cat $VPN_SELECT | awk -F',' '{print $4,$5}')\n"
+# sed "s/#auth-user-pass/auth-user-pass \/etc\/openvpn\/client\/auth.txt/g" $VPN_CONFIG > /dev/null
+# cat << EOF >> $VPN_CONFIG
+# auth-user-pass /etc/openvpn/client/auth.txt
+# keepalive 10 120
+# EOF
+# cat <<EOF >>$VPN_CONFIG
+# script-security 2
+# up /usr/local/bin/ifaceipc.sh
+# down /usr/local/bin/ifaceipc.sh
+# EOF

@@ -1,0 +1,191 @@
+# export PANEL_FIFO="/tmp/panel-fifo"
+# Switch locale
+#printf '\33]701;%s\007' "$LC_CTYPE"
+
+# if [ "$TERM" = "linux" ]; then
+#     echo -en "\e]P0232323" #black
+#     echo -en "\e]P82B2B2B" #darkgrey
+#     echo -en "\e]P1D75F5F" #darkred
+#     echo -en "\e]P9E33636" #red
+#     echo -en "\e]P287AF5F" #darkgreen
+#     echo -en "\e]PA98E34D" #green
+#     echo -en "\e]P3D7AF87" #brown
+#     echo -en "\e]PBFFD75F" #yellow
+#     echo -en "\e]P48787AF" #darkblue
+#     echo -en "\e]PC7373C9" #blue
+#     echo -en "\e]P5BD53A5" #darkmagenta
+#     echo -en "\e]PDD633B2" #magenta
+#     echo -en "\e]P65FAFAF" #darkcyan
+#     echo -en "\e]PE44C9C9" #cyan
+#     echo -en "\e]P7E5E5E5" #lightgrey
+#     echo -en "\e]PFFFFFFF" #white
+#     clear #for background artifacting
+# fi
+
+# Solarized Dark
+# if [ "$TERM" = "linux" ]; then
+#     echo -en "\e]PB657b83" # S_base00
+#     echo -en "\e]PA586e75" # S_base01
+#     echo -en "\e]P0073642" # S_base02
+#     echo -en "\e]P62aa198" # S_cyan
+#     echo -en "\e]P8002b36" # S_base03
+#     echo -en "\e]P2859900" # S_green
+#     echo -en "\e]P5d33682" # S_magenta
+#     echo -en "\e]P1dc322f" # S_red
+#     echo -en "\e]PC839496" # S_base0
+#     echo -en "\e]PE93a1a1" # S_base1
+#     echo -en "\e]P9cb4b16" # S_orange
+#     echo -en "\e]P7eee8d5" # S_base2
+#     echo -en "\e]P4268bd2" # S_blue
+#     echo -en "\e]P3b58900" # S_yellow
+#     echo -en "\e]PFfdf6e3" # S_base3
+#     echo -en "\e]PD6c71c4" # S_violet
+#     clear # against bg artifacts
+# fi
+
+export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/bin/core_perl:/usr/local/bin:/usr/bin:$HOME/.bin:$HOME/.config/scripts:$HOME/bin:$HOME/.config/composer/vendor/bin:$HOME/.yarn/bin:/usr/bin/vendor_perl:$HOME/.symfony/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_MUSIC_DIR="$HOME/Music"
+
+#export GTK_THEME="E17gtk"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+# MAILHOG CONFIG VARIABLES
+export MH_STORAGE=maildir
+export MH_MAILDIR_PATH=/tmp/mailhog
+
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+#export LESS=" -SRXFN "
+
+# vscode debug enable
+export XDEBUG_CONFIG="idekey=VSCODE"
+
+#export MANWIDTH=$(tput cols)
+
+# Default papersize
+export PAPERSIZE=a4
+
+# Enable iex shell history
+#export ERL_AFLAGS="-kernel shell_history enabled"
+
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+# Following automatically calls "startx" when you login:
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1
+
+# Default apps
+export BROWSER=chromium
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+export PAGER=less
+
+# Less options
+export LESS="-FJMRWX -x4"
+
+# Collation
+export LC_COLLATE="C"
+
+# NNN
+# export NNN_USE_EDITOR=1
+# export NNN_CP_MV_PROG=1
+# export NNN_BMS='s:~/.config/scripts;a:~/.config/awesome;e:/etc;d:~/Downloads;c:~/.config;m:~/media;g:~/Sources'
+# export NNN_OPENER_DETACH=1
+# export NNN_TMPFILE="/tmp/nnn"
+# export NNN_RESTRICT_0B=1
+# export NNN_SCRIPT="~/.config/nnn/plugins"
+
+# export BLUEALSA_CONF="-p a2dp-source -p a2dp-sink"
+
+# Fix for fonts in wine
+export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+
+# Prevent installing mono/gecko when using wine
+export WINEDLLOVERRIDES="mscoree=d;mshtml=d"
+
+# Configure style settings for QT5 apps
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Make java use system anti-aliased fonts and make swing use the gtk look and feel
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# Fix for java apps for tiling window managers
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# . $HOME/.config/bspwm/panel/profile
+
+# Scripts directory
+#export SCRIPTS_DIR=$HOME/bin
+
+# Window manager log file
+export WMLOG=$XDG_RUNTIME_DIR/wm.log
+
+# Set intel va-api driver (for hardware acceleration)
+export LIBVA_DRIVER_NAME=i965
+
+# Set intel vdpau driver (for hardware acceleration)
+export VDPAU_DRIVER=va_gl
+
+#if [[ -z $DISPLAY ]] && [[ $XDG_VTNR -eq 1 ]]; then
+#if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#     # exec xinit -- /usr/bin/Xephyr :78 -nolisten tcp -screen 1366x768 -dpi 96 -rgba rgb -once -tst
+#    export XORG_LOG=$HOME/.local/share/xorg/xorg-session.log
+#    # Default Terminal Emulator
+#    export TERMINAL=urxvtc
+
+#    # dmenu settings
+#    export DMENU_FONT="Misc Ohsnap-12"
+#    export DMENU_NB="#242424"
+#    export DMENU_HEIGHT=32
+
+#    #export CM_DIR="~/.cache/clipmenu"
+#    # Clipmenu Settings
+#    export CM_DEBUG=1
+#    export CM_SELECTIONS="primary clipboard secondary"
+#    export CM_HISTlENGTH=5
+
+#    exec startx &>>$XORG_LOG
+#fi
+
+# Default disk cache size for sccache
+SCCACHE_CACHE_SIZE="1G"
+
+# Add denon to path
+#export PATH="/home/d0np0br3/.deno/bin:$PATH"
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+
+    export XKB_DEFAULT_LAYOUT=us
+    export QT_QPA_PLATFORM=wayland
+    # export QT_WAYLAND_FORCE_DPI=physical
+    export CLUTTER_BACKEND=wayland
+    export SDL_VIDEODRIVER=wayland
+    export MOZ_ENABLE_WAYLAND=1
+
+    export TERMINAL=foot
+    export BROWSER=qutebrowser
+
+    export BEMENU_BACKEND=wayland
+    export BEMENU_FONT="Sony Sketch EF 11"
+    export BEMENU_HEIGHT=32
+
+    export FZF_DEFAULT_COMMAND='fd --type file'
+
+    # icons for lf
+    LF_ICONS=$(sed ~/.config/lf/diricons \
+        -e '/^[ \t]*#/d' \
+        -e '/^[ \t]*$/d' \
+        -e 's/[ \t]\+/=/g' \
+        -e 's/$/ /')
+    LF_ICONS=${LF_ICONS//$'\n'/:}
+    export LF_ICONS
+
+    # pipewire
+    export PIPEWIRE_LATENCY=768/48000
+    export PULSE_LATENCY_MSEC=16
+
+    # Uncomment to enable screen sharing
+    export XDG_CURRENT_DESKTOP=sway
+
+    # Launch wayland compositor
+    exec sway &>>$WMLOG
+    #exec river 2>>$WMLOG
+fi

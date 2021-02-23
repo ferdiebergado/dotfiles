@@ -1,0 +1,16 @@
+#!/bin/bash
+#[[ -z $(pgrep ananicy) ]] && systemctl start ananicy
+#[[ -z $(systemctl status haveged | grep -ow active) ]] && systemctl start haveged
+ip link set dev $IFACE down
+macchanger -A $IFACE
+ip link set dev $IFACE up
+[[ $(pgrep wpa_supplicant) -eq 0 ]] && wpa_supplicant -B -i "$IFACE" -c /etc/wpa_supplicant/minimal.conf
+[[ -z $(pgrep dhclient) ]] && dhclient
+#[[ -z $(pgrep dnscrypt-proxy) ]] && systemctl start dnscrypt-proxy.socket
+#[[ -z $(pgrep unbound) ]] && systemctl start unbound
+[[ -z $(systemctl status iptables | grep -ow active) ]] && systemctl start iptables
+#[[ -z $(pgrep arpon) ]] && systemctl start arpon
+[[ -z $(pgrep smartd) ]] && systemctl start smartd
+#[[ -z $(systemctl status asd | grep -ow active) ]] && systemctl start asd
+export GW=$(ip route show | awk '/default/ { print $3 }')
+#sudo -u d0np0br3 systemctl --user psd

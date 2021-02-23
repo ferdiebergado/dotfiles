@@ -1,0 +1,199 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+114.py	../autoload/plugged/vista.vim/test/data/114.py	1;"	kind:file	line:1
+70.py	../autoload/plugged/vista.vim/test/data/70.py	1;"	kind:file	line:1
+Array	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Array = 18$/;"	kind:variable	line:24
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                BAR = 12$/;"	kind:variable	line:14
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                BAR = 12$/;"	kind:variable	line:32
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                BAR = 12$/;"	kind:variable	line:50
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        BAR = 12$/;"	kind:variable	line:25
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        BAR = 12$/;"	kind:variable	line:43
+BAR	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        BAR = 12$/;"	kind:variable	line:7
+Bar	../autoload/plugged/vista.vim/test/data/70.py	/^    class Bar:$/;"	kind:class	line:2
+Bar	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            class Bar:$/;"	kind:class	line:13
+Bar	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            class Bar:$/;"	kind:class	line:31
+Bar	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            class Bar:$/;"	kind:class	line:49
+Bar	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^    class Bar:$/;"	kind:class	line:6
+Bar1	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^    class Bar1:$/;"	kind:class	line:24
+Bar2	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^    class Bar2:$/;"	kind:class	line:42
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Baz:$/;"	kind:class	line:16
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Baz:$/;"	kind:class	line:34
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Baz:$/;"	kind:class	line:52
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Baz:$/;"	kind:class	line:27
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Baz:$/;"	kind:class	line:45
+Baz	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Baz:$/;"	kind:class	line:9
+Boolean	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Boolean = 17$/;"	kind:variable	line:23
+COMPLETE_OUTPUTS	../autoload/plugged/LanguageClient-neovim/rplugin/python3/deoplete/sources/LanguageClientSource.py	/^COMPLETE_OUTPUTS = "g:LanguageClient_omniCompleteResults"$/;"	kind:variable	line:4
+Class	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Class = 5$/;"	kind:variable	line:11
+Constant	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Constant = 14$/;"	kind:variable	line:20
+Constructor	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Constructor = 9$/;"	kind:variable	line:15
+DeniteOverrides	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	/^DeniteOverrides = {$/;"	kind:variable	line:5
+Enum	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Enum = 10$/;"	kind:variable	line:16
+EnumMember	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    EnumMember = 22$/;"	kind:variable	line:28
+Event	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Event = 24$/;"	kind:variable	line:30
+Field	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Field = 8$/;"	kind:variable	line:14
+File	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    File = 1$/;"	kind:variable	line:7
+Foo	../autoload/plugged/vista.vim/test/data/114.py	/^class Foo:$/;"	kind:class	line:1
+Foo	../autoload/plugged/vista.vim/test/data/70.py	/^class Foo:$/;"	kind:class	line:1
+Foo	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^class Foo:$/;"	kind:class	line:5
+Function	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Function = 12$/;"	kind:variable	line:18
+GITHUB_TOKEN	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')$/;"	kind:variable	line:21
+GREP_FILE_HIGHLIGHT	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_FILE_HIGHLIGHT = 'highlight default link deniteSource_grepFile Comment'$/;"	kind:variable	line:17
+GREP_FILE_SYNTAX	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_FILE_SYNTAX = ($/;"	kind:variable	line:12
+GREP_HEADER_SYNTAX	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_HEADER_SYNTAX = ($/;"	kind:variable	line:7
+GREP_LINE_HIGHLIGHT	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_LINE_HIGHLIGHT = 'highlight default link deniteSource_grepLineNR LineNR'$/;"	kind:variable	line:23
+GREP_LINE_SYNTAX	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_LINE_SYNTAX = ($/;"	kind:variable	line:19
+GREP_PATTERNS_HIGHLIGHT	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^GREP_PATTERNS_HIGHLIGHT = 'highlight default link deniteGrepPatterns Function'$/;"	kind:variable	line:25
+HighlightDefinition	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^def HighlightDefinition(name,$/;"	kind:function	line:26
+Interface	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Interface = 11$/;"	kind:variable	line:17
+Key	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Key = 20$/;"	kind:variable	line:26
+LanguageClientSource.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/deoplete/sources/LanguageClientSource.py	1;"	kind:file	line:1
+LanguageClient_test.py	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	1;"	kind:file	line:1
+MAX_FNAME_LEN	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^MAX_FNAME_LEN = 30$/;"	kind:variable	line:14
+Macro	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Macro = 255$/;"	kind:variable	line:38
+Method	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Method = 6$/;"	kind:variable	line:12
+Module	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Module = 2$/;"	kind:variable	line:8
+NVIM_LISTEN_ADDRESS	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^NVIM_LISTEN_ADDRESS = "\/tmp\/nvim-LanguageClient-IntegrationTest"$/;"	kind:variable	line:11
+Namespace	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Namespace = 3$/;"	kind:variable	line:9
+Null	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Null = 21$/;"	kind:variable	line:27
+Number	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Number = 16$/;"	kind:variable	line:22
+Object	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Object = 19$/;"	kind:variable	line:25
+Operator	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Operator = 25$/;"	kind:variable	line:31
+PATH_CODEACTION	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^PATH_CODEACTION = join_path("data\/sample-ts\/src\/codeAction.ts")$/;"	kind:variable	line:24
+PATH_INDEXJS	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^PATH_INDEXJS = join_path("data\/sample-js\/src\/index.js")$/;"	kind:variable	line:22
+PATH_LIBSJS	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^PATH_LIBSJS = join_path("data\/sample-js\/src\/libs.js")$/;"	kind:variable	line:23
+Package	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Package = 4$/;"	kind:variable	line:10
+Parameter	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Parameter = 253$/;"	kind:variable	line:36
+Property	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Property = 7$/;"	kind:variable	line:13
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Qux:$/;"	kind:class	line:19
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Qux:$/;"	kind:class	line:37
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^                class Qux:$/;"	kind:class	line:55
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Qux:$/;"	kind:class	line:12
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Qux:$/;"	kind:class	line:30
+Qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        class Qux:$/;"	kind:class	line:48
+ReadClasspathFile	../autoload/plugged/neomake/autoload/neomake/makers/ft/java/classpath.py	/^def ReadClasspathFile(fn):$/;"	kind:function	line:5
+SYMBOL_CANDIDATE_HIGHLIGHT_SYNTAX	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^SYMBOL_CANDIDATE_HIGHLIGHT_SYNTAX = [$/;"	kind:variable	line:41
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/codeAction.py	/^class Source(Base):$/;"	kind:class	line:5
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	/^class Source(Base):$/;"	kind:class	line:13
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/documentSymbol.py	/^class Source(Base):$/;"	kind:class	line:16
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^class Source(Base):$/;"	kind:class	line:32
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/workspaceSymbol.py	/^class Source(Base):$/;"	kind:class	line:15
+Source	../autoload/plugged/LanguageClient-neovim/rplugin/python3/deoplete/sources/LanguageClientSource.py	/^class Source(Base):$/;"	kind:class	line:7
+StaticMethod	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    StaticMethod = 254$/;"	kind:variable	line:37
+String	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    String = 15$/;"	kind:variable	line:21
+Struct	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Struct = 23$/;"	kind:variable	line:29
+SymbolKind	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^class SymbolKind(IntEnum):$/;"	kind:class	line:5
+Test1	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^class Test1:$/;"	kind:class	line:17
+Test2	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^class Test2:$/;"	kind:class	line:22
+TypeAlias	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    TypeAlias = 252$/;"	kind:variable	line:35
+TypeParameter	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    TypeParameter = 26$/;"	kind:variable	line:32
+Unknown	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Unknown = 0$/;"	kind:variable	line:6
+Variable	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    Variable = 13$/;"	kind:variable	line:19
+_HighlightDefinition	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^_HighlightDefinition = namedtuple("HighlightDefinition", ($/;"	kind:variable	line:16
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/codeAction.py	/^    def __init__(self, vim):$/;"	kind:member	line:6
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	/^    def __init__(self, vim):$/;"	kind:member	line:14
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/documentSymbol.py	/^    def __init__(self, vim):$/;"	kind:member	line:17
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^    def __init__(self, vim):$/;"	kind:member	line:33
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/workspaceSymbol.py	/^    def __init__(self, vim):$/;"	kind:member	line:16
+__init__	../autoload/plugged/LanguageClient-neovim/rplugin/python3/deoplete/sources/LanguageClientSource.py	/^    def __init__(self, vim):$/;"	kind:member	line:8
+__init__	../autoload/plugged/vista.vim/test/data/114.py	/^    def __init__(self, x):$/;"	kind:member	line:2
+_missing_	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    def _missing_(value):$/;"	kind:member	line:41
+_open_float_window	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def _open_float_window(nvim):$/;"	kind:function	line:213
+assertRetry	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def assertRetry(predicate, retry_max=100):$/;"	kind:function	line:28
+bar	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^def bar(some_test_object):$/;"	kind:function	line:27
+baz	../autoload/plugged/vista.vim/test/data/70.py	/^        def baz(self):$/;"	kind:member	line:3
+classpath.py	../autoload/plugged/neomake/autoload/neomake/makers/ft/java/classpath.py	1;"	kind:file	line:1
+cleanup-binary-tags.py	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	1;"	kind:file	line:1
+cmd_delete_local	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^cmd_delete_local = 'git tag --delete'$/;"	kind:variable	line:19
+cmd_delete_remote	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^cmd_delete_remote = 'git push --delete '$/;"	kind:variable	line:20
+codeAction.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/codeAction.py	1;"	kind:file	line:1
+common.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	1;"	kind:file	line:1
+compile.py	../autoload/plugged/neomake/autoload/neomake/makers/ft/python/compile.py	1;"	kind:file	line:1
+contextMenu.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	1;"	kind:file	line:1
+convert_symbols_to_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^def convert_symbols_to_candidates(symbols: List[Dict],$/;"	kind:function	line:114
+convert_to_candidate	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/codeAction.py	/^def convert_to_candidate(cmd: Dict) -> Dict:$/;"	kind:function	line:18
+convert_to_candidate	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	/^    def convert_to_candidate(self, item):$/;"	kind:member	line:20
+convert_to_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^    def convert_to_candidates(self, locations: List[Dict]) -> List[Dict]:$/;"	kind:member	line:60
+ctags_tree_view.py	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	1;"	kind:file	line:1
+define_syntax	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^    def define_syntax(self):$/;"	kind:member	line:40
+describe	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^    def describe(self):$/;"	kind:member	line:44
+documentSymbol.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/documentSymbol.py	1;"	kind:file	line:1
+errors.py	../autoload/plugged/neomake/tests/fixtures/errors.py	1;"	kind:file	line:1
+foo	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^    def foo(self, x):$/;"	kind:member	line:18
+foo	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^    def foo(self, x):$/;"	kind:member	line:23
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/codeAction.py	/^    def gather_candidates(self, context: Dict) -> List[Dict]:$/;"	kind:member	line:12
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/contextMenu.py	/^    def gather_candidates(self, context: Dict) -> List[Dict]:$/;"	kind:member	line:32
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/documentSymbol.py	/^    def gather_candidates(self, context: Dict) -> List[Dict]:$/;"	kind:member	line:26
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^    def gather_candidates(self, context):$/;"	kind:member	line:85
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/workspaceSymbol.py	/^    def gather_candidates(self, context):$/;"	kind:member	line:26
+gather_candidates	../autoload/plugged/LanguageClient-neovim/rplugin/python3/deoplete/sources/LanguageClientSource.py	/^    def gather_candidates(self, context):$/;"	kind:member	line:19
+greet	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	/^def greet(name: str) -> str:$/;"	kind:function	line:4
+highlight	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/documentSymbol.py	/^    def highlight(self):$/;"	kind:member	line:23
+highlight	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^    def highlight(self):$/;"	kind:member	line:52
+highlight	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/workspaceSymbol.py	/^    def highlight(self):$/;"	kind:member	line:23
+highlight_setup	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^def highlight_setup(source: Base, syntax: List[HighlightDefinition]) -> None:$/;"	kind:function	line:80
+join_path	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def join_path(path: str) -> str:$/;"	kind:function	line:17
+main	../autoload/plugged/neoformat/test/after/yapf.py	/^def main():$/;"	kind:function	line:1
+main	../autoload/plugged/neoformat/test/before/yapf.py	/^def main():$/;"	kind:function	line:1
+main	../autoload/plugged/neomake/autoload/neomake/makers/ft/python/compile.py	/^def main(argv):$/;"	kind:function	line:9
+mangle_name	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^    def mangle_name(name: str) -> str:$/;"	kind:function	line:81
+nvim	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def nvim() -> neovim.Nvim:$/;"	kind:function	line:42
+project_root	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^project_root = os.path.dirname(os.path.abspath(__file__))$/;"	kind:variable	line:14
+protocol.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	1;"	kind:file	line:1
+qux	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^    def qux(self):$/;"	kind:member	line:60
+qux1	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^    def qux1(self):$/;"	kind:member	line:76
+readlines	../autoload/plugged/neoformat/test/test.py	/^def readlines(filename):$/;"	kind:function	line:17
+references.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	1;"	kind:file	line:1
+run_cmd	../autoload/plugged/neoformat/test/test.py	/^def run_cmd(cmd):$/;"	kind:function	line:13
+run_vim_cmd	../autoload/plugged/neoformat/test/test.py	/^def run_vim_cmd(cmd, filename=''):$/;"	kind:function	line:8
+s	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/lsp/protocol.py	/^        s = ""$/;"	kind:variable	line:51
+sample.py	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/sample.py	1;"	kind:file	line:1
+setup.py	../autoload/plugged/LanguageClient-neovim/tests/data/sample-py/setup.py	1;"	kind:file	line:1
+tag_to_version	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^def tag_to_version(tag):$/;"	kind:function	line:8
+tags	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^tags = subprocess.check_output($/;"	kind:variable	line:13
+test.py	../autoload/plugged/neoformat/test/test.py	1;"	kind:file	line:1
+test_autocompletion	../autoload/plugged/neoformat/test/test.py	/^def test_autocompletion():$/;"	kind:function	line:118
+test_fixture	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_fixture(nvim):$/;"	kind:function	line:50
+test_formatprg_with_neoformat	../autoload/plugged/neoformat/test/test.py	/^def test_formatprg_with_neoformat():$/;"	kind:function	line:72
+test_formatprg_without_enable	../autoload/plugged/neoformat/test/test.py	/^def test_formatprg_without_enable():$/;"	kind:function	line:91
+test_formatters	../autoload/plugged/neoformat/test/test.py	/^def test_formatters():$/;"	kind:function	line:22
+test_languageClient_registerHandlers	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_languageClient_registerHandlers(nvim):$/;"	kind:function	line:185
+test_languageClient_registerServerCommands	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_languageClient_registerServerCommands(nvim):$/;"	kind:function	line:177
+test_textDocument_definition	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_definition(nvim):$/;"	kind:function	line:66
+test_textDocument_documentSymbol	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_documentSymbol(nvim):$/;"	kind:function	line:118
+test_textDocument_hover	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_hover(nvim):$/;"	kind:function	line:54
+test_textDocument_hover_float_window_closed_on_cursor_moved	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_hover_float_window_closed_on_cursor_moved(nvim):$/;"	kind:function	line:221
+test_textDocument_hover_float_window_closed_on_entering_window	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_hover_float_window_closed_on_entering_window(nvim):$/;"	kind:function	line:251
+test_textDocument_hover_float_window_closed_on_switching_to_buffer	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_hover_float_window_closed_on_switching_to_buffer(nvim):$/;"	kind:function	line:278
+test_textDocument_hover_float_window_move_cursor_into_window	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_hover_float_window_move_cursor_into_window(nvim):$/;"	kind:function	line:314
+test_textDocument_references	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_references(nvim):$/;"	kind:function	line:146
+test_textDocument_references_modified_buffer	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_references_modified_buffer(nvim):$/;"	kind:function	line:163
+test_textDocument_rename	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_rename(nvim):$/;"	kind:function	line:76
+test_textDocument_rename_multiple_files	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_rename_multiple_files(nvim):$/;"	kind:function	line:103
+test_textDocument_rename_multiple_oneline	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_textDocument_rename_multiple_oneline(nvim):$/;"	kind:function	line:89
+test_vader	../autoload/plugged/neoformat/test/test.py	/^def test_vader():$/;"	kind:function	line:109
+test_viml_syntax	../autoload/plugged/neoformat/test/test.py	/^def test_viml_syntax():$/;"	kind:function	line:127
+test_visual_selection_multi_filetype	../autoload/plugged/neoformat/test/test.py	/^def test_visual_selection_multi_filetype():$/;"	kind:function	line:36
+test_visual_selection_with_filetype_and_formatter	../autoload/plugged/neoformat/test/test.py	/^def test_visual_selection_with_filetype_and_formatter():$/;"	kind:function	line:56
+test_workspace_symbol	../autoload/plugged/LanguageClient-neovim/tests/LanguageClient_test.py	/^def test_workspace_symbol(nvim):$/;"	kind:function	line:132
+thing1	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        def thing1():$/;"	kind:function	line:61
+thing1	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        def thing1():$/;"	kind:function	line:77
+thing2	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            def thing2():$/;"	kind:function	line:66
+thing2	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            def thing2():$/;"	kind:function	line:82
+thing3	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            def thing3():$/;"	kind:function	line:70
+thing3	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^            def thing3():$/;"	kind:function	line:86
+thing4	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        def thing4():$/;"	kind:function	line:73
+thing4	../autoload/plugged/vista.vim/test/data/ctags_tree_view.py	/^        def thing4():$/;"	kind:function	line:89
+uri_to_path	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/common.py	/^def uri_to_path(uri: str) -> str:$/;"	kind:function	line:76
+uri_to_path	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/references.py	/^def uri_to_path(uri: str) -> str:$/;"	kind:function	line:28
+versions	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^versions = sorted(list(set([tag_to_version(tag) for tag in tags])),$/;"	kind:variable	line:15
+versions_to_delete	../autoload/plugged/LanguageClient-neovim/ci/cleanup-binary-tags.py	/^versions_to_delete = versions[:-3]$/;"	kind:variable	line:17
+workspaceSymbol.py	../autoload/plugged/LanguageClient-neovim/rplugin/python3/denite/source/workspaceSymbol.py	1;"	kind:file	line:1
+yapf.py	../autoload/plugged/neoformat/test/after/yapf.py	1;"	kind:file	line:1
+yapf.py	../autoload/plugged/neoformat/test/before/yapf.py	1;"	kind:file	line:1

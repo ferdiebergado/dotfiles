@@ -1,0 +1,4 @@
+# Prefer 1080p or lower resolutions
+#-f bestvideo[ext=mp4][width<720][height<=480]+bestaudio[ext=m4a]/bestvideo[ext=webm][width<720][height<=480]+bestaudio[ext=webm]/bestvideo[width<720][height<=480]+bestaudio/best[width<720][height<=480]/best
+-f bestvideo[height<=?480][vcodec!=vp9]+bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/best
+

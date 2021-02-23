@@ -1,0 +1,5 @@
+source $XDG_CONFIG_HOME/slimzsh/slim.zsh
+#clear; tput cup $LINES 0
+uname -srvm
+
+#source /usr/share/nvm/init-nvm.sh

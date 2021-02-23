@@ -1,0 +1,31 @@
+protocol unix,inet,inet6,netlink
+
+ignore no3d
+ignore private-dev
+
+private-bin w3m,img2sixel,grep,fzf,cut,xargs,mpv,youtube-dl,nvim,python*,ffmpeg,env,notify-send
+
+private-etc ld.so.cache,hostname,hosts,fonts,mpv,group
+
+include /etc/firejail/allow-lua.inc
+include /etc/firejail/allow-python2.inc
+include /etc/firejail/allow-python3.inc
+
+noblacklist ${HOME}/.config/mpv
+noblacklist ${HOME}/.config/youtube-dl
+noblacklist ${HOME}/.config/fontconfig
+
+whitelist ${HOME}/.config/mpv
+whitelist ${HOME}/.config/youtube-dl
+whitelist ${HOME}/.config/fontconfig
+
+include whitelist-usr-share-common.inc
+include whitelist-player-common.inc
+
+noblacklist /usr/bin/youtube-dl
+noblacklist /usr/bin/python*
+noblacklist /usr/bin/env
+
+ignore memory-deny-write-execute
+
+ignore dbus-user

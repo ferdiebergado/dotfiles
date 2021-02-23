@@ -1,0 +1,4 @@
+nodbus
+#include /etc/firejail/chromium-common-hardened.inc
+
+include fontconfig.inc

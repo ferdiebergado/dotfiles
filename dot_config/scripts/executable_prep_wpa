@@ -1,0 +1,25 @@
+#!/bin/sh
+#killall lightsOn.sh
+#[[ -z $(pgrep i3) ]] && [[ -z $(pgrep ananicy) ]] && sudo systemctl start ananicy &
+#systemctl --user restart psd &
+[[ -z $(systemctl --user status psd | grep -ow active) ]] && systemctl --user start psd &
+
+[[ -n $(pgrep i3) ]] && [[ -z $(pgrep -f i3break.sh) ]] && sh -c /home/d0np0br3/.config/scripts/i3break.sh &
+# [[ -z $(pgrep smartd) ]] && sudo systemctl restart smartd &
+#[[ -z $(uname -r | grep -i ck) ]] && sudo systemctl restart ananicy &
+#sudo systemctl restart asd &
+#[[ -z $(pgrep i3) ]] && sh -c /home/d0np0br3/.config/scripts/lightsOn.sh &
+#sleep 10s && systemctl --user restart psd
+sudo -i wificonnect
+#systemd-denotify.py &
+#systemctl --user restart psd
+#exit
+systemctl --failed &
+systemd-analyze
+
+# sleep 3
+# curl -s ipinfo.io | jr -r
+#exip &
+
+# ~/Sources/dnsleaktest/dnsleaktest &
+exit 0

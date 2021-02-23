@@ -1,0 +1,13 @@
+ignore shell none
+ignore private-dev
+ignore private-tmp
+ignore private-bin
+ignore nonewprivs
+ignore noroot
+ignore netfilter
+ignore private-etc
+noblacklist ${PATH}/gcc*
+noblacklist ${HOME}/.config/qt5ct
+noblacklist ${HOME}/.cache/fontconfig
+noblacklist ${HOME}/.cache/mesa_shader_cache
+noblacklist ${HOME}/.local/share/mime

@@ -1,0 +1,4 @@
+#!/bin/bash
+killall wpa_supplicant
+wpa_supplicant -Dnl80211,wext -i wls1 -c <(wpa_passphrase "$1" "$2") &
+

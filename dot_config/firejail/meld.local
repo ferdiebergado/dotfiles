@@ -1,0 +1,2 @@
+noblacklist ${HOME}/.config/awesome
+noblacklist /usr/share/fonts/local/TamzenForPowerline7x14r.bdf

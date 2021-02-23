@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# cmus-status-display
+#
+# Usage:
+#   in cmus command ":set status_display_program=cmus-status-display"
+#
+# This scripts is executed by cmus when status changes:
+#   cmus-status-display key1 val1 key2 val2 ...
+#
+# All keys contain only chars a-z. Values are UTF-8 strings.
+#
+# Keys: status file url artist album discnumber tracknumber title date
+#   - status (stopped, playing, paused) is always given
+#   - file or url is given only if track is 'loaded' in cmus
+#   - other keys/values are given only if they are available
+#  
+
+output()
+{
+	# write status to ~/cmus-status.txt (not very useful though)
+	# echo "$*" >> ~/cmus-status.txt 2>&1i
+    if test "$*" != "playing"
+    then
+        SUMMARY=$(basename "$*")
+        HTMLSUMMARY=$(echo "$SUMMARY" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
+    else
+        SUMMARY="$*"
+        HTMLSUMMARY="$*"
+    fi
+    #notify-send -a cmus -i ~/Music/cover.png "Now Playing" "$SUMMARY"
+    echo -e "naughty = require(\"naughty\") cmusid = naughty.notify({ icon = \"/home/d0np0br3/Music/cover.png\", title = \"Now Playing\", text = \"$SUMMARY\", replaces_id = cmusid, timeout = 5 }).id" | awesome-client &
+    echo -e "markup = require(\"lain.util.markup\") nowplaying:set_markup(markup.font(\"Misc Ohsnap.Icons 8\", markup.fg(\"#00FFFF\", \" à Now Playing:\") .. markup.fg(\"#EEEEEE\", \" \") .. markup.fg(\"#FFDC0B\", \"$HTMLSUMMARY\") .. markup.font(\"Misc Ohsnap 8\", \" \")))" | awesome-client &
+
+	# WMI (http://wmi.modprobe.de/)
+	#wmiremote -t "$*" &> /dev/null
+}
+
+while test $# -ge 2
+do
+	eval _$1='$2'
+	shift
+	shift
+done
+
+# if test -n "$_file"
+# then
+
+# 	output "$_artist - $_album - $_title"
+# elif test -n "$_url"
+# then
+	# output "$_url - $_title"
+# else 
+if test "$_status" = "playing" 
+then
+    output "$_file"
+else 
+    output "$_status"
+fi

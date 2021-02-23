@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sudo -u \#1000 polybar-msg hook disktemp 2

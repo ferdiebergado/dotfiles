@@ -1,0 +1,6 @@
+#!/bin/bash 
+ip link set dev wls1 down
+macchanger -A wls1 
+ip link set dev wls1 up
+iw dev wls1 scan | grep -i ssid
+

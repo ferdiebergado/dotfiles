@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#killall lightsOn.sh
+
+# [[ -z "$(systemctl --user status psd | grep -ow active)" ]] && systemctl --user start psd &
+
+#[[ -z $(pgrep -f lightsOn.sh) ]] && sh -c /home/d0np0br3/.config/scripts/lightsOn.sh &
+
+# [[ -n $(pgrep i3) ]] && [[ -z $(pgrep -f i3break.sh) ]] && sh -c /home/d0np0br3/.config/scripts/i3break.sh &
+
+sudo -i wificonnectHome
+
+# echo -e "\nChecking for updates...\n"
+# UPFILE=/tmp/updates.txt
+# yay -Qu >$UPFILE
+# cat $UPFILE
+# echo -e "\n$(cat $UPFILE | wc -l) update(s) available.\n"
+
+systemctl --failed
+
+systemd-analyze
+
+#sleep 5
+
+#curl -s ipinfo.io | jq -r &
+
+#exip &
+
+#~/Sources/dnsleaktest/dnsleaktest &

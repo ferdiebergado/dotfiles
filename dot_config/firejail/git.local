@@ -1,0 +1,6 @@
+noblacklist ${HOME}/Sources
+noblacklist ${HOME}/.config/awesome
+noblacklist ${HOME}/.mozilla/firefox
+noblacklist ${HOME}/.cache/asp/.git
+
+whitelist ${HOME}/Sources/ABS/repo

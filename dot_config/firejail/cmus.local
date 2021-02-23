@@ -1,0 +1,7 @@
+include enable-lua.local
+noblacklist ~/.config/scripts/cmus-status-display
+noblacklist ~/.config/scripts/cmus_status_with_lua
+noblacklist ${HOME}/Music/Win-Music
+noblacklist /media/sda2-ata-KINGSTON_SUV400S/Users/ferdie/Music
+
+#private-bin notify-send awesome-client dunst

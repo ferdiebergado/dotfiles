@@ -1,0 +1,78 @@
+#defaults.bluealsa.interface "hci0"
+#defaults.bluealsa.device "00:58:56:0C:FF:C7"
+#defaults.bluealsa.device "35:A3:27:F3:D4:26"
+#defaults.bluealsa.device "DC:60:78:20:57:1B"
+#defaults.bluealsa.profile "a2dp"
+#defaults.bluealsa.delay 10000
+#defaults.pcm.rate_converter "speexrate_medium"
+
+# pcm.!default {
+#     type file               # File PCM
+#     slave.pcm "asymed"      # Use the dmixer plugin as the slave pcm
+#     file "|safe_fifo /tmp/audio"
+#     format raw              # File format ("raw" or "wav")
+#     perm 0666               # Output file permission (octal, def. 0600)
+# }
+
+# pcm.!default {
+#     type plug
+#     slave.pcm "asymed"
+# }
+
+# pcm.asymed {
+#     type asym
+#     playback.pcm {
+#         @func getenv
+#         vars [ ALSAPCM ]
+#         default "dmix"
+#     }
+#     capture.pcm "dsnoop"
+# }
+
+#pcm.dmixer {
+#    type dmix
+#    ipc_key 1024
+#    ipc_key_add_uid false
+#    ipc_perm 0666            # mixing for all users
+#    slave {
+#        pcm "hw:0,0"
+#        #period_time 0
+#        #period_size 1024
+#        #buffer_size 8192
+#        #rate 44100
+#    }
+#    bindings {
+#        0 0
+#        1 1
+#    }
+#}
+
+pcm.btheadset {
+  type plug
+  slave {
+    pcm {
+      type bluealsa
+      # rock space Muvia    
+      #device "FC:58:FA:23:1D:9B"
+      # Realme 5i
+      device "BC:2D:EF:B2:B9:10"
+      profile "auto"
+    }
+  }
+  hint {
+    show on
+    description "Rock Space Muvia Bluetooth Headset"
+  }
+}
+
+ctl.btheadset {
+  type bluealsa
+}
+
+# defaults.bluealsa {
+#     # rock space Muvia
+#     device "FC:58:FA:23:1D:9B"
+#     # use a2dp for digital audio
+#     # use sco profile to enable headset mic
+#     # profile "auto"
+# }

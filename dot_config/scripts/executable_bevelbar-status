@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Draw status info using two processes:
+#
+#     - A child runs `bevelbar-status-runner' every ~10 seconds (low
+#       frequency). That script might take quite some time to finish,
+#       depending on which infos it's trying to collect. Once it's done,
+#       it can write its string to the file "$strbuf".
+#     - The parent process creates output every ~1 second (high
+#       frequency). It reads the file "$strbuf", but it also appends the
+#       current time. This way, display of the current time won't lag
+#       more than ~1 second.
+
+strbuf=$(mktemp)
+trap 'rm -f "$strbuf"' EXIT
+
+power_aware_delay()
+{
+    status=$(cat /sys/class/power_supply/BAT?/status 2>/dev/null)
+    [[ "$status" == Discharging ]] && echo 60 || echo 10
+}
+
+(
+    trap 'rm -f "$strbuf_new"' EXIT
+    while sleep $(power_aware_delay)
+    do
+        # We write to a second file and then rename that file. The
+        # kernel can do this rename atomically. We do this in order to
+        # avoid artifacts (partially written files).
+        strbuf_new=$(mktemp)
+        bevelbar-status-runner >"$strbuf_new"
+        mv "$strbuf_new" "$strbuf"
+    done
+) &
+
+while sleep .$((1000000000 - 10#$(date +%N) ))
+do
+    echo "a"
+    cat "$strbuf"
+    echo "2$(LANG=fi_FI.UTF-8 date "+%A, %F (%B), W%V, %T")"
+    echo "e"
+    echo "f"
+done

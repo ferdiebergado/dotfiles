@@ -1,0 +1,18 @@
+#!/bin/sh 
+#killall lightsOn.sh
+sudo killall dhcpcd
+sudo killall wpa_supplicant
+sudo systemctl stop dnscrypt-proxy.socket
+sudo systemctl stop systemd-timesyncd
+sudo systemctl stop unbound
+sudo ip link set dev wls1 down
+#sudo systemctl restart smartd &
+#[[ -z $(uname -r | grep -i ck) ]] && sudo systemctl restart ananicy &
+#sudo systemctl restart asd &
+#[[ -z $(pgrep i3) ]] && sh -c /home/d0np0br3/.config/scripts/lightsOn.sh &
+#sleep 10s && systemctl --user restart psd
+#sudo -i wificonnectHome
+#systemctl --user restart psd
+#exit
+systemctl --failed 
+systemd-analyze

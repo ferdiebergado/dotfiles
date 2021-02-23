@@ -1,0 +1,12 @@
+#!/bin/sh 
+sudo systemctl restart ananicy &
+sudo systemctl restart smartd &
+#[[ -z $(uname -r | grep -i ck) ]] && sudo systemctl restart ananicy &
+#sudo systemctl restart asd &
+#sleep 10s && systemctl --user restart psd
+sudo -i openwifi "$1"
+#systemd-denotify.py &
+systemctl --user restart psd
+#exit
+#systemctl --failed 
+#systemd-analyze

@@ -1,0 +1,8 @@
+#top-container,
+#masthead-ad,
+#player-ads,
+.ytd-display-ad-renderer,
+.promotedlink,
+[data-before-content="advertisement"] {
+  display: none !important;
+}

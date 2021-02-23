@@ -1,0 +1,27 @@
+#!/bin/bash
+
+start() {
+    [[ -z $(systemctl status $1 | grep -ow active) ]] && systemctl start $1
+}
+
+#start haveged &
+start smartd &
+
+ip link set dev "$IFACE" down
+macchanger -A "$IFACE"
+ip link set dev "$IFACE" up
+
+[[ $(pgrep wpa_supplicant) -eq 0 ]] && wpa_supplicant -B -i "$IFACE" -c /etc/wpa_supplicant/minimal.conf
+
+ip addr add 192.168.2.129/21 dev "$IFACE"
+ip route add default via 192.168.0.15
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+
+start systemd-timesyncd &
+start ipset && start iptables &
+
+sudo -u d0np0br3 XDG_RUNTIME_DIR="/run/user/1000" DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus" systemctl --user restart psd
+
+systemd-analyze
+systemctl --failed
+

@@ -1,0 +1,94 @@
+# ALIASES
+
+#alias sudo='sudo '
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+
+#alias grep='grep --color=tty -d skip'
+#alias cp="cp -i"                        # Confirm before overwriting something
+alias df='df -h'                        # Human-readable sizes
+alias free='free -m'                    # Show sizes in MB
+alias mkdir='mkdir -v'
+alias chmod='chmod -v'
+alias ln='ln -v'
+#alias fixit='sudo rm -f /var/lib/pacman/db.lck && sudo pacman-mirrors -g && sudo pacman -Syyuu && sudo pacman -Suu'
+# alias bspwmrc='nano ~/.config/bspwm/bspwmrc'
+# alias sxhkdrc='nano ~/.config/sxhkd/sxhkdrc'
+#alias x='startx ~/.xinitrc' # Type name of desired desktop after x, xinitrc is configured for it
+# alias autostart='nano ~/.config/bspwm/autostart'
+#alias repoup='repo-add local-repo.db.tar.gz *.pkg.tar.*'
+#alias speedometer="urxvtc -fn xft:monospace:pixelsize=8 -e speedometer -tx wls1"
+#alias feh="feh -g 800x600 -Z -B black --info 'identify %F'"
+#alias xterm='urxvtc'
+#alias cp="rsync -avhrW --no-compress --progress "
+#" $@ && sync && notify-send 'Rsync' 'Data transfer finished.'"
+
+alias psc='ps xawf -eo pid,user,cgroup,args'
+# pretty print groups 
+alias id="id $1 | sed s/' '/'\n'/g | sed s/,/',\n '/g | sed s/'('/' ('/g | sed s/uid/' uid'/g | sed s/gid/' gid'/g | sed s/=/' = '/g"
+
+# print external ip info
+alias exip='curl -s ipinfo.io | jq -r'
+
+# print outgoing ip only
+alias outip='curl -s httpbin.org/ip | jq -r .origin'
+
+# weather forecast for manila
+alias forecast='curl wttr.in/manila'
+
+# % mem usage of an application
+alias mu='ps -eo pmem,comm | grep $1 | awk '{sum+=$1} END {print sum " % of RAM"}''
+
+# share file remotely (parameters: $1 - port, $2 - file)
+alias netshare='nc -v -l $1 < $2'
+
+# matrix style
+alias matrixstyle='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+
+# unprotect pdf file (parameters: $1 output file; $2 input file)
+alias unprotect='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1 -c .setpdfwrite -f $2'
+
+# random hexdump 
+alias hexcafe='cat /dev/urandom | hexdump -C | grep "ca fe"'
+
+# check if the ISP is intercepting DNS queries
+alias ispcheck='dig +short which.opendns.com txt @208.67.220.220'
+
+# optimize pacman database access speed
+alias optimizepm='sudo pacman-optimize && sync'
+
+#alias qutebrowser='qutebrowser --backend webengine --qt-flag disable-reading-from-canvas '
+#alias mpd='mpd -v'
+#alias composer='composer -vvv --profile'
+#alias inox="inox --process-per-site"
+alias rm="rm -v "
+#alias ls="/opt/coreutils/bin/ls"
+# alias xls="exa --long --header --git"
+# alias xl='exa -lBF'                       # list, size, show type
+# alias xla='exa -ldFa'                     # long list, show almost all, show type and hidden
+# alias xlr='exa -RFa --sort=modified'      # list, sorted by modified date, recursive, show type and hidden
+# alias xlm='exa -lBdFa --sort=modified'    # long list, no recursion, sorted by modified date, show type and hidden
+# alias xll='exa -lBhgUm@'                  # long list
+# alias xlS='exa -1'                        # one list
+#alias d='dirs -v | head -10'
+
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+
+alias mv='advmv -g'
+
+#alias pbc='php bin/console'
+#alias artisan='php artisan'
+
+alias e=$EDITOR
+alias ce='chezmoi edit'
+
+# vim: ft=zsh

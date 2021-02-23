@@ -1,0 +1,16 @@
+#!/bin/sh
+rawlength=$(soxi -D $1)
+length=$(echo "($rawlength+0.5)/1" | bc)
+echo -e "WAV Splitter Script by FERDINAND BERGADO\n"
+echo -e "Audio duration: $length seconds\n"
+s=120
+i=1
+#mkdir $1 && cd $1
+while [ $i -le $length ]
+    do
+        p=$[($i/$L)\*100]
+        echo -e "$p%: Saving $i...\n"
+        sox $1 "$1$i.WAV" trim $i $s
+        i=$[$i+$s]
+done
+echo -e "Done.\n\n"

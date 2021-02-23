@@ -1,0 +1,12 @@
+net none
+noblacklist ${HOME}/.PlayOnLinux
+noblacklist ${HOME}/Downloads
+noblacklist ${HOME}/Documents
+noblacklist /media/sda2-ata-KINGSTON_SUV400S/Users/ferdie
+noblacklist /media/sda2-ata-KINGSTON_SUV400S/Windows/Fonts
+
+whitelist ${HOME}/.PlayOnLinux
+whitelist ${HOME}/Downloads
+whitelist ${HOME}/Documents
+whitelist /media/sda2-ata-KINGSTON_SUV400S/Users/ferdie
+whitelist /media/sda2-ata-KINGSTON_SUV400S/Windows/Fonts

@@ -1,0 +1,27 @@
+#!/bin/bash
+#systemctl stop asd
+[[ -z $(pgrep smartd) ]] && systemctl start smartd &
+systemctl stop systemd-timesyncd &
+systemctl stop unbound &
+systemctl stop dnscrypt-proxy.socket &
+systemctl stop arpon &
+systemctl stop iptables &
+#systemctl stop haveged
+killall dhcpcd &
+killall wpa_supplicant &
+#[[ -n $(grep cfq /sys/block/sda/queue/scheduler) ]] && [[ -z $(pgrep ananicy) ]] && systemctl start ananicy
+#systemctl start haveged
+ip link set dev $IFACE down && macchanger -A $IFACE && ip link set dev $IFACE up &
+#wpa_supplicant -Dnl80211,wext -i wls1 -c <(wpa_passphrase "$1" "$2") &
+wpa_supplicant -B -i $IFACE -c /etc/wpa_supplicant/minimal.conf
+dhcpcd -1 -w $IFACE
+systemctl start dnscrypt-proxy.socket &
+systemctl start unbound &
+export GW=$(ip route show | awk '/default/ { print $3 }')
+[[ -n $GW ]] && arptables -A INPUT ! -s $GW -j DROP; arptables -A OUTPUT ! -d $GW -j DROP &
+systemctl start arpon &
+systemctl start systemd-timesyncd &
+systemctl start iptables &
+#systemctl start asd
+systemctl --failed
+systemd-analyze

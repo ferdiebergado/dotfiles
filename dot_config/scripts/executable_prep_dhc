@@ -1,0 +1,15 @@
+#!/bin/sh 
+
+#killall lightsOn.sh
+
+[[ -z $(systemctl --user status psd | grep -ow active) ]] && systemctl --user start psd &
+
+#[[ -z $(pgrep -f lightsOn.sh) ]] && sh -c /home/d0np0br3/.config/scripts/lightsOn.sh &
+
+[[ -n $(pgrep i3) ]] && [[ -z $(pgrep -f i3break.sh) ]] && sh -c /home/d0np0br3/.config/scripts/i3break.sh &
+
+sudo -i wificonnectdhc
+
+systemctl --failed
+
+systemd-analyze

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+foot -T htop htop &
+
+swaymsg layout splitv && foot -T 'journalctl -f' journalctl -f &
+
+swaymsg layout splitv && foot -T 'tailf $WMLOG' zsh -i -c "tailf $WMLOG" &

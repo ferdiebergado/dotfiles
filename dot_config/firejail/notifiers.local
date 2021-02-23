@@ -1,0 +1,2 @@
+noblacklist /usr/bin/notify-send
+noblacklist /usr/bin/dunst

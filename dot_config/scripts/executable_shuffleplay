@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+PLAYLIST=/tmp/playlist.txt
+DIR=.
+
+[[ -n $1 ]] && DIR=$1
+
+find $DIR -type f \( -iname '*.mp3' -o -iname '*.m4a' \) -exec readlink -f '{}' \; >$PLAYLIST
+
+/usr/bin/mpv --shuffle --playlist=$PLAYLIST

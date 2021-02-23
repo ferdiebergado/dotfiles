@@ -1,0 +1,78 @@
+#!/bin/sh
+redirect() {
+    exec </dev/null 1>&0 2>&0
+}
+
+fork() {
+    exec setsid -f -- "$@"
+}
+
+spawn() {
+    redirect
+    fork "$@"
+}
+
+case "$1" in
+    *.7z | *.a | *.ace | *.alz | *.arc | *.arj | *.bz | *.bz2 | *.cab | *.cpio | *.deb | *.gz | *.jar | \
+        *.lha | *.lrz | *.lz | *.lzh | *.lzma | *.lzo | *.rar | *.rpm | *.rz | *.t7z | *.tar | *.tbz | \
+        *.tbz2 | *.tgz | *.tlz | *.txz | *.tZ | *.tzo | *.war | *.xz | *.Z | *.zip)
+        for file; do
+            aunpack -- "$file"
+        done
+        ;;
+    *.[1-8])
+        exec man -- "$@"
+        ;;
+    *.pdf | *.ps | *.eps | *.djvu | *.djv | *.epub | *.cb[zr7t])
+        spawn zathura -- "$@"
+        ;;
+    *.od[cbdfgipstm] | *.odft | *.ot[cgipsth])
+        spawn libreoffice "$@"
+        ;;
+    *.do[ct] | *.do[ct]x)
+        spawn env WINEPREFIX="/home/d0np0br3/.PlayOnLinux/wineprefix/Office2010" wine start /ProgIDOpen Word.Document.12 "$@"
+        ;;
+    *.xl[st] | *.xl[st]x)
+        spawn env WINEPREFIX="/home/d0np0br3/.PlayOnLinux/wineprefix/Office2010" wine start /ProgIDOpen Excel.Sheet.12 "$@"
+        ;;
+    *.p[po]t | *.p[po]tx)
+        spawn env WINEPREFIX="/home/d0np0br3/.PlayOnLinux/wineprefix/Office2010" wine start /ProgIDOpen PowerPoint.Show.12 "$@"
+        ;;
+    *.htm | *.html | *.xhtml)
+        first="true"
+        for file; do
+            if [ -n "$first" ]; then
+                first=""
+                set -- "file://$file"
+            else
+                set -- "$@" "file://$file"
+            fi
+        done
+        spawn firefox -- "$@"
+        ;;
+    *.svg)
+        spawn inkscape -- "$@"
+        ;;
+    *.mid | *.midi)
+        exec fluidsynth -a alsa -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM.sf2 -- "$@"
+        ;;
+    *.cue)
+        exec mpv --no-audio-display -- "$@"
+        ;;
+esac
+
+case "$(file -Lb --mime-type -- "$1")" in
+    image/*)
+        spawn imv -s none -- "$@"
+        ;;
+    audio/* | */ogg)
+        #exec mpv -- "$@"
+        lf -remote "send $id !mpv \"$@\""
+        ;;
+    video/*)
+        spawn mpv -- "$@"
+        ;;
+    *)
+        exec $EDITOR -- "$@"
+        ;;
+esac

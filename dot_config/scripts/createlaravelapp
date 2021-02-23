@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -z $(command -v composer) ]; then
+    echo "composer is not installed."
+    exit 1
+fi
+
+# Laravel
+composer create-project --prefer-dist laravel/laravel $1
+php artisan key:generate
+
+# Sanctum
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+
+# php-cs-fixer config
+copy -v ~/.config/scripts/php_cs_example .php_cs
+
+# vim: set ft=sh:

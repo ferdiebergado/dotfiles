@@ -1,0 +1,2 @@
+blacklist /usr/bin/llvm*
+blacklist /usr/bin/gcc

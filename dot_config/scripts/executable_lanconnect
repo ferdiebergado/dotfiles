@@ -1,0 +1,16 @@
+#!/bin/bash
+
+IFACE=ens5f5
+
+[[ -z $(systemctl --user status psd | grep -ow active) ]] && systemctl --user start psd &
+
+sudo ip link set dev $IFACE down
+sudo macchanger -A $IFACE
+sudo ip link set dev $IFACE up
+sudo dhcpcd $IFACE
+sudo systemctl start unbound
+sudo systemctl start ipset
+sudo systemctl start iptables
+sudo systemctl start systemd-timesyncd
+
+echo -e "\nDone.\n"

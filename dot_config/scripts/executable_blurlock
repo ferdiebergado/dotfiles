@@ -1,0 +1,7 @@
+# !/bin/bash
+# /usr/bin/ob_blurlock
+# blurlock for oblogout-manjaro
+
+  import -window root /tmp/screenshot.png && convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png && i3lock -leni /tmp/screenshotblur.png
+
+exit 0

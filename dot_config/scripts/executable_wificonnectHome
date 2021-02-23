@@ -1,0 +1,235 @@
+#!/bin/sh
+HARDEN=0
+WGCONF="mullvad-sg1"
+#IFACE=ens5f5
+WLAN=wlan0
+BMAC="90:ac:3f:e1:2e:69"
+MAC="08:23:B2:EB:D6:C0"
+MAC2="DE:F0:99:35:3D:EA"
+
+# set kernel hardening parameters
+sethardeningconf() {
+    HARDEN=1
+    echo -e "\nSetting kernel hardening parameters... "
+    sysctl -p /home/d0np0br3/.config/scripts/hardening.conf &
+    echo -e "done.\n"
+    # start apparmor &
+}
+
+change_mac() {
+    echo -e "\nChanging MAC address...\n"
+    IFACES=$(ip addr show | grep BROADCAST | awk -F ": " '{print $2}')
+    NUMIFACE=$(echo "$IFACES" | wc -l)
+    for ((i = 1; i <= $NUMIFACE; i++)); do
+        iface=$(echo "$IFACES" | awk -v j="$i" 'NR==j' | tr -d '[:space:]')
+        ip link set dev "$iface" down
+        # if [ "$iface" == "$WLAN" ]; then
+        #     macchanger -m $BMAC "$iface"
+        # else
+        macchanger -a "$iface"
+        # fi
+        ip link set dev "$iface" up
+    done
+}
+
+# check_updates() {
+#     LAST_SYNC_DATE="$(date -r /etc/pacman.d/mirrorlist '+%D')"
+#     CURRENT_DATE="$(date '+%D')"
+#     if [ $(date -d $LAST_SYNC_DATE '+%s') -lt $(date -d $CURRENT_DATE '+%s') ]; then
+#         echo -e "Updating mirrorlists...\n" &
+#         sh -c "reflector --protocol https --latest 5 --age 24 --sort rate --save /etc/pacman.d/mirrorlist"
+#         echo -e "\nMirrors updated.\n"
+#     else
+#         echo -e "\nMirrors are up to date.\n"
+#     fi
+#     echo -e "\nChecking for updates...\n"
+#     UPDATES="$(yay -Qu)"
+#     COUNT=$(echo "$UPDATES" | wc -l)
+#     echo -e "$UPDATES"
+#     echo -e "\n$COUNT update(s) available.\n"
+# }
+
+# start vpn
+connectvpn() {
+    sleep 3
+    echo -e "\nConnecting to VPN...\n"
+    U="d0np0br3"
+    # VPN_LIST="/tmp/vpngate.csv"
+    # VPN_CONFIG="/tmp/vpngate.conf"
+    # /usr/bin/wget -O $VPN_LIST http://www.vpngate.net/api/iphone && cat $VPN_LIST | sort -k5 -t, -n | grep -w TH | tail -n 1 | awk -F ',' '{$15}' | base64 -di > $VPN_CONFIG
+    echo -e "\nFetching vpn configuration...\n"
+    sudo -u $U /home/$U/.config/scripts/vpnconfig
+    # sleep 3
+    echo -e "\nStarting VPN connection...\n"
+    chown -v $U:root /tmp/vpngate.*
+    cp -v /tmp/vpngate.conf /etc/openvpn/client/vpngate.conf && systemctl start openvpn-client@vpngate
+}
+
+# set_wireguard() {
+#     wg-quick $1 $WGCONF
+# }
+
+source /home/d0np0br3/.config/scripts/services
+
+# # start service when not active
+# start() {
+#     [[ -z $(systemctl status $1 | grep -ow active) ]] && systemctl start $1.service
+# }
+
+# # stop service when active
+# stop() {
+#     [[ -n $(systemctl status $1 | grep -ow active) ]] && systemctl stop $1.service
+# }
+
+# kill_all() {
+#     [[ -n $(pgrep $1) ]] && killall -q $1 &
+# }
+
+# Error Handler
+# traperr() {
+#     echo "ERROR: ${BASH_SOURCE[1]} at about ${BASH_LINENO[0]}"
+#     exit 1
+# }
+
+#set -o errtrace
+#trap traperr ERR
+
+# anything-sync-daemon
+# echo -e "\nStarting anything-sync-daemon...\n"
+# start asd &
+
+# Load tcp_bbr module for linux zen for high performance congestion control
+if [ -n "$(uname -r | grep zen)" ] && [ -z "$(lsmod | grep tcp_bbr)" ]; then
+    echo -e "\nLoading high performance tcp congestion control module...\n"
+    modprobe tcp_bbr
+    echo -e "\nSetting network performance kernel parameters...\n"
+    sysctl -p /etc/sysctl.d/zen_net &
+    echo -e "\nDone.\n"
+fi
+
+# [[ -n $(uname -r | grep harden) ]] && sethardeningconf
+
+# SMART Monitoring
+#echo -e "\nStarting SMART Disk Monitor...\n"
+#start smartd &
+
+# stop network services
+echo -e "\nStopping network services...\n"
+#killall -q wpa_supplicant &
+stop iwd
+#dhclient -r $IFACE &
+#killall dhcpcd
+stop systemd-timesyncd &
+#wg-quick down wg0 &
+if [ $HARDEN -eq 1 ]; then
+    if [ -n $(pgrep openvpn) ]; then
+        stop openvpn-client@vpngate &
+    else
+        set_wireguard down
+    fi
+fi
+stop unbound &
+# stop dnscrypt-proxy
+#stop iptables &
+#stop ipset
+stop nftables &
+
+# change mac address of active network interface
+#change_mac
+
+#ip link set dev "$IFACE" down
+##macchanger -a "$IFACE"
+##macchanger -m 68:db:96:58:92:33 "$IFACE"
+#macchanger -m 90:ac:3f:e1:2e:69 "$IFACE"
+##macchanger -m $MAC2 "$IFACE"
+#ip link set dev "$IFACE" up
+
+# connect to wireless network
+echo -e "\nConnecting to wireless network...\n"
+#wpa_supplicant -Dnl80211,wext -i wls1 -c <(wpa_passphrase "PLDTHOMEFIBR_9f2d70" "caseypatricebrinas") &
+#wpa_supplicant -B -i $WLAN -c /etc/wpa_supplicant/minimal.conf -Dnl80211 2>&1
+start iwd
+##iwctl station "$IFACE" scan
+#iwctl station $NETDEV connect $SSID
+#start iwd@$IFACE
+
+# obtain ip address
+# dhcpcd "$IFACE"
+#dhclient -v $IFACE
+
+#echo -e "\nObtaining IP address...\n"
+#dhcpcd &
+# Secure DNS queries
+#if [ $HARDEN -eq 1 ]; then
+#echo -e "\nStarting Secure DNS queries daemon...\n"
+#systemctl start dnscrypt-proxy.socket
+##systemctl start stubby &
+#cat << EOF > $DNSCONF
+#server:
+#  use-syslog: yes
+#  do-daemonize: no
+#  username: "unbound"
+#  directory: "/etc/unbound"
+#  trust-anchor-file: trusted-key.key
+#  root-hints: root.hints
+#  do-not-query-localhost: no
+#  verbosity: 2
+#forward-zone:
+#  name: "."
+#  forward-addr: 127.0.0.1@53000
+#EOF
+#else
+#cat << EOF > $DNSCONF
+#server:
+#  use-syslog: yes
+#  do-daemonize: no
+#  username: "unbound"
+#  directory: "/etc/unbound"
+#  #trust-anchor-file: trusted-key.key
+#  root-hints: root.hints
+#  #do-not-query-localhost: no
+#  tls-cert-bundle: /etc/ssl/certs/ca-certificates.crt
+#  verbosity: 2
+#forward-zone:
+#  name: "."
+#  forward-tls-upstream: yes
+#  #forward-addr: 108.61.161.119
+#  forward-addr: 1.1.1.1@853#cloudflare-dns.com
+#  #forward-addr: 99.192.182.100
+#EOF
+#fi
+
+# Local caching DNS server
+echo -e "\nStarting local caching DNS Service...\n"
+systemctl start unbound &
+
+# VPN
+# if [ $HARDEN -eq 1 ]; then
+# systemctl start jackett &
+# connectvpn
+# fi
+
+# enable firewall
+#[[ -n $GW ]] && arptables -A INPUT ! -s $GW -j DROP; arptables -A OUTPUT ! -d $GW -j DROP &
+
+# Firewall
+echo -e "\nLaunching firewall...\n"
+#systemctl start ipset
+#systemctl start iptables
+systemctl start nftables
+
+# NTP Time Synchronization
+echo -e "\nSynchronizing network time...\n"
+systemctl start systemd-timesyncd &
+
+# export network gateway ip address for use by other programs
+# export GW=$(ip route show | awk '/default/ { print $3 }') &
+
+# check_updates
+
+#export IFACE=$(echo $IFACES | awk 'NR==1')
+#~/.config/polybar/launch.sh
+
+echo -e "\nDone.\n"
+
+#exit 0

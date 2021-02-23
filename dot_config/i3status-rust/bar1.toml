@@ -1,0 +1,25 @@
+icons = "awesome"
+
+[theme]
+name = "plain"
+[theme.overrides]
+idle_bg = "#333333"
+idle_fg = "#93a1a1"
+info_bg = "#333333"
+info_fg = "#93a1a1"
+good_bg = "#333333"
+good_fg = "#2ca1a1"
+warning_fg = "#e68900"
+warning_bg = "#333333"
+critical_bg = "#333333"
+critical_fg = "#dd005f"
+separator = ""
+separator_bg = "auto"
+separator_fg = "auto"
+alternating_tint_bg = "#000000"
+alternating_tint_fg = "#000000"
+
+[[block]]
+block = "focused_window"
+show_marks = "visible"
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#source /home/d0np0br3/.config/scripts/services
+
+# stop network services
+systemctl stop iwd
+systemctl stop systemd-timesyncd
+systemctl stop openvpn-client@vpngate
+systemctl stop unbound
+#systemctl stop dnscrypt-proxy.socket &
+#systemctl stop dnscrypt-proxy.service &
+#systemctl stop stubby &
+#systemctl stop iptables &
+#systemctl stop ipset &
+systemctl stop nftables
+#dhcpcd -k "$IFACE" &
+#
+#dhcpcd -x "$IFACE" &
+# systemctl stop iwd
+#killall wpa_supplicant &
+ip link set dev wlan0 down
