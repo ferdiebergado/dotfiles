@@ -1,0 +1,92 @@
+q
+set status_display_program=/home/d0np0br3/.config/cmus/cmus-status-wayland.sh
+set status_display_program=/home/d0np0br3/.config/cmus/cmus-status.sh
+clear
+set output_plugin=pulse
+set output_plugin
+set output_plugin=pulse,alsa
+clear 
+e
+colorscheme gruvbox-alt
+colorscheme green
+colorscheme gray-88
+colorscheme jellybeans
+colorscheme gruvbox
+colorscheme zenburn
+colorscheme dracula
+colorscheme default
+colorscheme cyan
+colorscheme
+pl-create rapture.v2
+pl-create rapture
+qy
+get
+c
+re
+player-pause-playback
+cl
+set show_remaining_time=false
+set show_remaining_time=true
+showbind settings
+set show_current_bitrate=true
+show_current_bitrate true
+set show_current_bitrate true
+set status_display_program=/home/d0np0br3/.config/cmus/cmus_notify.py
+set 
+set status_display_program=/home/d0np0br3/.config/cmus/cmus-status-display-default
+set status_display_program=/home/d0np0br3/.config/cmus/cmus-status-display
+set status_display_program=/home/d0np0br3/.config/scripts/cmus-status-display
+set dsp.alsa.device=btheadset
+set dsp.alsa.device=bluealsa
+set output_plugin=alsa/bluealsa
+set
+live-filter 
+Clear
+clera
+set status_display_program=/home/d0np0br3/.config/scripts/cmus_status_with_lua
+Q
+set format_current=
+set format_current=%a - %t
+save
+w
+colorscheme xterm-white
+colorscheme night
+colorscheme green-mono-88
+colorscheme green-mono
+colorcheme zenburn
+q:
+save_config
+next
+shuffle
+shuffle_playlist
+help
+i
+shuffle 
+shuffel
+shuffle on
+set softvol_state 90
+vol +20
+vol up
+set status_display_program
+set continue
+set shuffle
+set shuffle true
+player-play
+play
+set dsp.alsa.device=default
+set output_plugin=bluealsa
+set output_plugin=alsa
+set shuffle=true
+set status_display_program=~/.config/scrs/cmus_status_short.sh
+set status_display_program=~/.config/cmus/cmus-:
+set status_display_program=/home/d0np0br3/.config/scripts/cmus_status_short.sh
+set status_display_program=~/.config/scripts/cmus_status_short.sh
+set status_display_program=~/.config/scripts/cmus-status-display
+set status_display_program=cmus-status-display
+set status_display_program=
+update
+a ~/Downloads/music
+sort
+win-next
+C
+bind common <key> colorscheme 
