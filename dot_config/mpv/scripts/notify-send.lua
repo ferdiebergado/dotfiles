@@ -1,10 +1,11 @@
 local mp = require "mp"
 local utils = require "mp.utils"
 local msg = require "mp.msg"
-local icon = "/Downloads/images/icons/Guyman-Helmet-Music-icon.png"
-local thumbnail = os.getenv("HOME") .. icon or ""
+local home = os.getenv("HOME")
+local mpv_cache = home .. "/.cache/mpv"
 local title = ""
 local origin = ""
+local thumbnail = home .. "/Downloads/images/icons/Guyman-Helmet-Music-icon.png"
 
 local function notify(summary, body, options)
   local option_args = {}
@@ -17,7 +18,7 @@ local function notify(summary, body, options)
   })
 end
 
-local function notify_media(title, origin, thumbnail)
+local function notify_media()
   return notify(title, origin, {
     -- For some inscrutable reason, GNOME 3.24.2
     -- nondeterministically fails to pick up the notification icon
@@ -31,7 +32,9 @@ local function notify_media(title, origin, thumbnail)
     --
     -- hint = "string:desktop-entry:mpv",
 
-    icon = thumbnail or "mpv",
+    icon = thumbnail,
+    --["replaces-process"] = "mpv-notification",
+    --["replace-file"] = mpv_cache .. "/mpv_notification",
   })
 end
 
@@ -105,15 +108,14 @@ local function dump_cover()
     msg.log("info", "Cover art found. Dumping cover art...")
 
     local path = mp.get_property_native("path")
-    local cover = os.getenv("HOME") .. "/.cache/mpv/mpv.jpg"
+    local cover = mpv_cache .. "/mpv.jpg"
 
     mp.command_native({
       "run", "ffmpeg", "-loglevel", "quiet", "-y", "-i", path, "-map", "0:v", "-map", "-0:V", "-c", "copy", cover
     })
 
-    msg.log( "info", "Command finished. Cover art dumped to " .. cover)
-
-    thumbnail = cover
+  msg.log( "info", "Command finished. Cover art dumped to " .. cover)
+  thumbnail = cover
   end
 end
 
