@@ -243,13 +243,14 @@ bar {
     #swaybar_command waybar
     colors {
         #separator #666666
-        background #222222
+        background  #222222
         #background #301f1a
-        statusline #e1e1e1
-        focused_workspace #393941 #393941 #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #2c2c2c #2c2c2c #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        statusline  #e1e1e1
+        focused_workspace   #393941 #393941 #ffffff
+        active_workspace    #333333 #333333 #ffffff
+        inactive_workspace  #2c2c2c #2c2c2c #888888
+        urgent_workspace    #2f343a #900000 #ffffff
+        binding_mode        #16a085 #2C2C2C #F9FAF9
     }
 }
 
