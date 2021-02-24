@@ -3,7 +3,12 @@ noblacklist ${HOME}/Projects
 noblacklist ${HOME}/.local/share/nvim/site/pack/plugins
 noblacklist ${HOME}/.local/share/chezmoi
 noblacklist /tmp/yay
-noblacklist ${HOME}/.gitconfig
+noblacklist ${HOME}/.config/pass-git-helper
+noblacklist ${HOME}/.password-store
+noblacklist ${RUNUSER}/wayland-*
+noblacklist ${RUNUSER}/*.lock
+noblacklist /tmp/.X11-unix
+noblacklist ${RUNUSER}/systemd
 
 whitelist ${HOME}/Sources
 whitelist ${HOME}/Projects
@@ -11,4 +16,11 @@ whitelist ${HOME}/.local/share/nvim/site/pack/plugins
 whitelist ${HOME}/.local/share/chezmoi
 whitelist /tmp/yay
 whitelist ${HOME}/.gitconfig
+whitelist ${HOME}/.config/pass-git-helper
+whitelist ${HOME}/.password-store
+whitelist ${HOME}/.gnupg
+whitelist ${RUNUSER}/wayland-*
+whitelist ${RUNUSER}/*.lock
+whitelist /tmp/.X11-unix
+whitelist ${RUNUSER}/systemd
 
