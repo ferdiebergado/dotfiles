@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -360,7 +361,7 @@ map <leader>x :e ~/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
 
 " Restore terminal cursor on exit
-au VimLeave * set guicursor=a:block-blinkon0
+"au VimLeave * set guicursor=a:block-blinkon0
 
 let g:netrw_banner=0                    " Disable netrw banner"
 let g:netrw_winsize=20                  " Resize netrw window"
@@ -488,6 +489,13 @@ augroup vimrc-make-cmake
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
+
+" Restore cursor when resuming/exiting nvim
+au VimEnter,VimResume * set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
+
+" au VimLeave,VimSuspend * set guicursor=a:block-blinkon0
 
 if has('termguicolors')
     set termguicolors 
