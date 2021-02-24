@@ -1,6 +1,14 @@
 noblacklist ${HOME}/Sources
-noblacklist ${HOME}/.config/awesome
-noblacklist ${HOME}/.mozilla/firefox
-noblacklist ${HOME}/.cache/asp/.git
+noblacklist ${HOME}/Projects
+noblacklist ${HOME}/.local/share/nvim/site/pack/plugins
+noblacklist ${HOME}/.local/share/chezmoi
+noblacklist /tmp/yay
+noblacklist ${HOME}/.gitconfig
 
-whitelist ${HOME}/Sources/ABS/repo
+whitelist ${HOME}/Sources
+whitelist ${HOME}/Projects
+whitelist ${HOME}/.local/share/nvim/site/pack/plugins
+whitelist ${HOME}/.local/share/chezmoi
+whitelist /tmp/yay
+whitelist ${HOME}/.gitconfig
+
