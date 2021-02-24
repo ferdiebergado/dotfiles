@@ -88,7 +88,7 @@ swaymsg -t get_tree |
             "$app_name" \
             "$win_title"
     done |
-    bemenu -i -p 'WINDOWS:' -b -l 10 -w --hb $color --hf \#000000 --nf $color --tf $color --fn 'Nasalization 8' --fb \#000000 --ff $color |
+    bemenu -i -p 'WINDOWS:' -b -l 10 -w --hb $color --hf \#000000 --nf $color --tf $color --fn 'Orbitron 9' --fb \#000000 --ff $color |
     # wofi -m --insensitive --show dmenu --prompt='Focus a window' |
     {
         IFS=$'\t' read -r win_id ws_name app_name win_title
