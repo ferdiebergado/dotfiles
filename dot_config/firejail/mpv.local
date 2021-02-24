@@ -1,28 +1,13 @@
-#include lua-interpreters.local
-include allow-lua.inc
-
 noblacklist ${HOME}/Downloads
 noblacklist ${HOME}/Music
 noblacklist ${HOME}/.cache/mpv
 
 whitelist ${HOME}/Downloads
 whitelist ${HOME}/Music
-
-#whitelist ${HOME}/Downloads/villaneza
-#whitelist ${HOME}/Downloads/music
-#whitelist ${HOME}/Downloads/images/icons
-#whitelist ${HOME}/Downloads/videos
-#whitelist ${HOME}/Downloads/playlists
-#whitelist ${HOME}/Music
-#whitelist ${HOME}/.config/mpv/scripts
-#whitelist ${HOME}/.config/mpv/script-opts
-
-#whitelist ${HOME}/.cache
 whitelist ${HOME}/.cache/mpv
 
-#ignore nodbus
-#ignore private-bin
-private-bin env,mpv,python*,youtube-dl,notify-send,awesome-client,lua*,vglrun,mkdir,convert,sh,dunstify,which,cat,dbus-send,tail,echo,ffmpeg
+private-bin notify-send,awesome-client,lua*,vglrun,mkdir,convert,sh,dunstify,which,cat,dbus-send,tail,echo,ffmpeg
+
 private-tmp
 
 ignore dbus-user
