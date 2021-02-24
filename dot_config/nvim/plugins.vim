@@ -155,10 +155,6 @@ let g:markdown_fenced_languages = [
       \ 'help'
       \]
 
-" vim-polyglot (required)
-set nocompatible
-"let g:polyglot_disabled = ['graphql.plugin']
-
 " NERDTree
 packadd! nerdtree
 
