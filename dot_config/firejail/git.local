@@ -12,6 +12,11 @@ noblacklist ${RUNUSER}/systemd
 noblacklist ${HOME}/.config/gtk-3.0
 noblacklist ${HOME}/.gtkrc-2.0
 
+noblacklist ${HOME}/.config/systemd
+noblacklist ${HOME}/.local/share/systemd
+noblacklist /var/lib/systemd
+noblacklist ${PATH}/systemd-run
+
 whitelist ${HOME}/Sources
 whitelist ${HOME}/Projects
 whitelist ${HOME}/.local/share/nvim/site/pack/plugins
