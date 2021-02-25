@@ -244,7 +244,7 @@ while read -e option; do
         12)
             build_installed_cache
             echo -e "\n"
-            sh -c "cat $INSTALLED_CACHE | $FZF_PREVIEW_CMD --header 'REVERSE DEPENDENCY TREE' | xargs -ro pactree -rc"
+            sh -c "cat $INSTALLED_CACHE | $FZF_PREVIEW_CMD --header 'REVERSE DEPENDENCY TREE' | cut -d' ' -f1 | xargs -r pactree -cr"
             wait_input
             ;;
         # Delete db lock file
