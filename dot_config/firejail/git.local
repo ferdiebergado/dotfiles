@@ -29,3 +29,4 @@ whitelist ${RUNUSER}/systemd
 whitelist ${HOME}/.config/gtk-3.0
 whitelist ${HOME}/.gtkrc-2.0
 
+deterministic-exit-code
