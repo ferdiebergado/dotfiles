@@ -8,14 +8,8 @@ noblacklist ${HOME}/.password-store
 noblacklist ${RUNUSER}/wayland-*
 noblacklist ${RUNUSER}/*.lock
 noblacklist /tmp/.X11-unix
-noblacklist ${RUNUSER}/systemd
 noblacklist ${HOME}/.config/gtk-3.0
 noblacklist ${HOME}/.gtkrc-2.0
-
-noblacklist ${HOME}/.config/systemd
-noblacklist ${HOME}/.local/share/systemd
-noblacklist /var/lib/systemd
-noblacklist ${PATH}/systemd-run
 
 whitelist ${HOME}/Sources
 whitelist ${HOME}/Projects
@@ -29,7 +23,6 @@ whitelist ${HOME}/.gnupg
 whitelist ${RUNUSER}/wayland-*
 whitelist ${RUNUSER}/*.lock
 whitelist /tmp/.X11-unix
-whitelist ${RUNUSER}/systemd
 whitelist ${HOME}/.config/gtk-3.0
 whitelist ${HOME}/.gtkrc-2.0
 
