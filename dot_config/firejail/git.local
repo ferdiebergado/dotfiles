@@ -1,3 +1,5 @@
+ignore noexec ${HOME}
+
 noblacklist ${HOME}/Sources
 noblacklist ${HOME}/Projects
 noblacklist ${HOME}/.local/share/nvim/site/pack/plugins
@@ -9,6 +11,9 @@ noblacklist ${RUNUSER}/wayland-*
 noblacklist ${RUNUSER}/*.lock
 noblacklist /tmp/.X11-unix
 noblacklist ${RUNUSER}/systemd
+noblacklist ${HOME}/.config/gtk-3.0
+noblacklist /usr/share/aclocal
+noblacklist /usr/share/glib-2.0
 
 whitelist ${HOME}/Sources
 whitelist ${HOME}/Projects
@@ -23,4 +28,6 @@ whitelist ${RUNUSER}/wayland-*
 whitelist ${RUNUSER}/*.lock
 whitelist /tmp/.X11-unix
 whitelist ${RUNUSER}/systemd
-
+whitelist ${HOME}/.config/gtk-3.0
+whitelist /usr/share/aclocal
+whitelist /usr/share/glib-2.0
