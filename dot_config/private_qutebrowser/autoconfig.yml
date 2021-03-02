@@ -73,6 +73,6 @@ settings:
   url.default_page:
     global: https://duckduckgo.com/
   url.start_pages:
-    global: qute://version/
+    global: https://wiki.archlinux.org/index.php/Special:Random
   zoom.default:
     global: 96%

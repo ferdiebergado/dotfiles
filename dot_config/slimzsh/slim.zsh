@@ -2,9 +2,6 @@ slim_path=$(dirname $0)
 fpath=($slim_path $fpath)
 plugins_path="/usr/share/zsh/plugins"
 
-autoload -U promptinit && promptinit
-prompt pure
-
 # autoload -U compinit
 # compinit
 
@@ -57,3 +54,6 @@ source $slim_path/correction.zsh
 # if command -v fasd >/dev/null 2>&1; then
 #   eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install posix-alias)"
 # fi
+
+autoload -U promptinit; promptinit
+prompt pure

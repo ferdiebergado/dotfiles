@@ -10,6 +10,7 @@ noblacklist ${RUNUSER}/*.lock
 noblacklist /tmp/.X11-unix
 noblacklist ${HOME}/.config/gtk-3.0
 noblacklist ${HOME}/.gtkrc-2.0
+noblacklist ${HOME}/.config/qt5ct
 
 whitelist ${HOME}/Sources
 whitelist ${HOME}/Projects
@@ -25,4 +26,4 @@ whitelist ${RUNUSER}/*.lock
 whitelist /tmp/.X11-unix
 whitelist ${HOME}/.config/gtk-3.0
 whitelist ${HOME}/.gtkrc-2.0
-
+whitelist ${HOME}/.config/qt5ct

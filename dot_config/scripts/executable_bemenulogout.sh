@@ -70,14 +70,14 @@ if [ -n "$ACTION" ]; then
         "reboot")
             #stop_psd
             #quit_session
-            notify
-            reboot &
+            #notify
+            reboot
             ;;
         "shutdown")
             #stop_psd
             #quit_session
-            notify
-            poweroff &
+            #notify
+            poweroff
             ;;
     esac
 fi

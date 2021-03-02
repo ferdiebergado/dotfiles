@@ -148,9 +148,9 @@ show_menu() {
     echo -e "\n3 - Install a package\t\t\t12 - Reverse dependency tree"
     echo -e "\n4 - Remove a package\t\t\t13 - Delete db lock file"
     echo -e "\n5 - Remove a package (w/ dependencies)\t14 - Install from AUR"
-    echo -e "\n6 - List orphaned packages"
-    echo -e "\n7 - List installed from official repositories"
-    echo -e "\n8 - List installed from AUR"
+    echo -e "\n6 - List orphaned packages\t\t15 - List package sizes with dependencies"
+    echo -e "\n7 - List installed from official repositories\t16 - List changed backup files"
+    echo -e "\n8 - List installed from AUR\t\t17 - Show statistics"
     echo -e "\n9 - List explicitly installed packages\n"
     print_border
     show_prompt
@@ -185,7 +185,8 @@ while read -e option; do
         # Update installed packages
         2)
             update_mirrors
-            sh -c "yay -Syu"
+            #sh -c "yay -Syu"
+            sh -c "yay -Syu --devel --timeupdate"
             [[ $? -eq 0 ]] && rm -f $APP_CACHE
             wait_input
             ;;
@@ -258,6 +259,19 @@ while read -e option; do
             echo -e "\nEnter search term: "
             read p
             yay "$p"
+            wait_input
+            ;;
+        # List package sizes with dependencies
+        15)
+            sh -c "expac -H M '%m\t%n' | sort -hr | fzf --prompt 'Installed package sizes with dependencies: '"
+            ;;
+        # List changed backup files
+        16)
+            sh -c "pacman -Qii | awk '/^MODIFIED/ {print $2}' | fzf --prompt 'List changed backup files: '"
+            ;;
+        # Show statistics
+        17)
+            sh -c "yay -Ps"
             wait_input
             ;;
         0)

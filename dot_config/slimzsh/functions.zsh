@@ -33,14 +33,14 @@ hdtemp() {
 # print timestamps on tail -f output
 tailf() { tail -f $1 | while read; do echo "[ $(date +%D-%T) ] $REPLY"; done }
 
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]
-    then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
+# ranger() {
+#     if [ -z "$RANGER_LEVEL" ]
+#     then
+#         /usr/bin/ranger "$@"
+#     else
+#         exit
+#     fi
+# }
 
 # Compatible with ranger 1.4.2 through 1.7.*
 #
@@ -267,3 +267,17 @@ lcheck() {
     fi
 }
 
+# Change working dir in shell to last dir in lf on exit (adapted from ranger).
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}

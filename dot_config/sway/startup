@@ -1,26 +1,26 @@
 ### Startup Applications for Sway
 #
 # Gamma correction
-exec wlsunset -l 14.2 -L 121.4 &
+exec wlsunset -l 14.2 -L 121.4
 
 # Device monitor
-exec [[ -z $(pgrep -x devmon) ]] && devmon --exec-on-drive "notify-send --icon=/home/d0np0br3/Pictures/usb_drive128.png --urgency=low \"Volume %l has been mounted.\"" --exec-on-unmount "notify-send --icon=/home/d0np0br3/Pictures/black_drive_usb.png --urgency=low \"Volume %l has been unmounted\"" --ignore-device /dev/sda3 --ignore-device /dev/sda4 --ignore-device /dev/sr0 &
+#exec devmon --exec-on-drive "notify-send --icon=/home/d0np0br3/Pictures/usb_drive128.png --urgency=low \"Volume %l has been mounted.\"" --exec-on-unmount "notify-send --icon=/home/d0np0br3/Pictures/black_drive_usb.png --urgency=low \"Volume %l has been unmounted\"" --ignore-device /dev/sda3 --ignore-device /dev/sda4 --ignore-device /dev/sr0
+
+# Automount disks
+exec $HOME/.config/scripts/automount
 
 # Clipboard manager
-exec wl-paste --watch clipman store &
+exec wl-paste --watch clipman store
 
 # Overlay bar for brightness/volume
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -H 26 -b 1 -o 1 -p 2 --background-color \#00000000 --bar-color \#FF00FFFF --border-color \#FF00FFFF &
+#exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -H 26 -b 1 -o 1 -p 2 --background-color \#00000000 --bar-color \#FF00FFFF --border-color \#FF00FFFF
 
 # Notification daemon
-exec mako &
+exec mako
 
 # Screen locker
 set $locker 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2 --timestr "%H:%M" --datestr "%a %b %d %Y" --font "Ticking Timebomb BB" --font-size 40 -f'
-exec swayidle -w timeout 600 $locker timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep $locker &
-
-# Notify on startup
-exec notify-send -i $HOME/Downloads/images/icons/arch-dark.png "$(uname -rs)" "$(systemd-analyze | awk NR==1)" &
+exec swayidle -w timeout 600 $locker timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep $locker
 
 # Import gtk theme
 # set $gnome-schema org.gnome.desktop.interface
@@ -32,3 +32,13 @@ exec notify-send -i $HOME/Downloads/images/icons/arch-dark.png "$(uname -rs)" "$
 # }
 
 # vim: ft=i3config
+
+# Terminal Server
+exec foot -s
+
+# Graphical polkit authentication agent
+#exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec /usr/bin/lxpolkit
+
+# Notify on startup completed
+exec notify-send -i $HOME/Downloads/images/icons/arch-dark.png "$(uname -rs)" "$(systemd-analyze | awk NR==1)"

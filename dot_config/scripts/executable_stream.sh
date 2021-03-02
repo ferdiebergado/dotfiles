@@ -8,7 +8,7 @@ choice=$(
     for g in "${genres[@]}"; do
         echo "$g"
         # done | dmenu -l 14 -i -p 'Stream:' -h "$DMENU_HEIGHT" -fn "$DMENU_FONT" -nb "$DMENU_NB" -sb '#5F1C5F' -sf '#E4E4E4' | xargs -r echo | cut -d- -f1 | tr -d ' ')
-    done | bemenu -i -p 'Stream:' -H 24 --hb \#5f1c5f --hf \#e4e4e4 --tf \#e4e4e4 --fn 'White Rabbit 10' -l 14 -w | xargs -r echo | cut -d- -f1 | tr -d ' '
+    done | bemenu -iwb -p 'Stream:' -H 24 --hb \#5f1c5f --hf \#e4e4e4 --tf \#e4e4e4 --fn 'White Rabbit 10' -l 7 | xargs -r echo | cut -d- -f1 | tr -d ' '
 )
 
 stream=${stations[$choice]}

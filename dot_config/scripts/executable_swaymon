@@ -1,7 +1,9 @@
 #!/bin/sh
 
-foot -T htop htop &
+terminal=footclient
 
-swaymsg layout splitv && foot -T 'journalctl -f' journalctl -f &
+$terminal -T htop htop &
 
-swaymsg layout splitv && foot -T 'tailf $WMLOG' zsh -i -c "tailf $WMLOG" &
+swaymsg layout splitv && $terminal -T 'journalctl -f' journalctl -f &
+
+#swaymsg layout splitv && $terminal -T 'tailf $WMLOG' zsh -i -c "tailf $WMLOG" &

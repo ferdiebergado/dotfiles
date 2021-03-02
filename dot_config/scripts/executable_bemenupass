@@ -7,7 +7,7 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | bemenu -iwb -l 10 -p 'PASSWORDS: ' --fn "Roboto 10" --hb \#009fff --hf \#ffffff --tf \#009fff)
+password=$(printf '%s\n' "${password_files[@]}" | bemenu -iwb -l 10 -p 'PASS: ' --fn "$BEMENU_FONT" --hb \#009fff --hf \#ffffff --tf \#009fff)
 
 [[ -n $password ]] || exit
 

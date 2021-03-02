@@ -1,7 +1,7 @@
 ### Additional Keybindings for Sway
 
 # file manager
-bindsym $mod+Shift+f exec 'OPENER=~/.config/lf/open $term lf'
+bindsym $mod+Shift+f exec $term lf
 
 # text editor
 bindsym $mod+Shift+n exec $term nvim
@@ -30,7 +30,7 @@ bindsym $mod+Shift+m exec $term cmus
 bindsym $mod+Shift+s exec stream.sh
 
 # equalizer
-bindsym $mod+equal exec $term -f "misc Ohsnap:pixelsize=14" cava
+bindsym $mod+equal exec termite -e cava
 
 # scratchpad
 bindsym $mod+BackSpace exec $term -a scratchpad
@@ -45,10 +45,16 @@ bindsym $mod+grave exec swaymon
 bindsym $mod+Escape exec bemenulogout.sh
 
 # clipboard manager
-bindsym $mod+p exec clipman pick -t bemenu -T="-i -p 'CLIPBOARD:' --fn '$BEMENU_FONT' --hb \#333339 --hf \#f9f9f9 -w -l 10 -b"
+bindsym $mod+p exec clipman pick -t bemenu -T="-i -p 'CLIPBOARD:' --fn '$BEMENU_FONT' --hb \#333333 --hf \#f9f9f9 --tf \#f9f9f9 -w -l 10 -b"
 
 # actions menu
 bindsym $mod+Shift+p exec bemenu-actions.sh
+
+# password manager
+bindsym $mod+Delete exec bemenupass
+
+# tmux system monitor session
+bindsym $mod+x exec tmux-sysmon-wayland.sh
 
 # volume keys
 bindsym --locked XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob

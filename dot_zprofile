@@ -154,7 +154,7 @@ SCCACHE_CACHE_SIZE="1G"
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 
     export XKB_DEFAULT_LAYOUT=us
-    export QT_QPA_PLATFORM=wayland
+    export QT_QPA_PLATFORM=wayland-egl
     # export QT_WAYLAND_FORCE_DPI=physical
     export CLUTTER_BACKEND=wayland
     export SDL_VIDEODRIVER=wayland
@@ -164,11 +164,13 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     export BROWSER=qutebrowser
 
     export BEMENU_BACKEND=wayland
-    export BEMENU_FONT="Sony Sketch EF 11"
+    export BEMENU_FONT="Coda 10"
     export BEMENU_HEIGHT=32
 
     export FZF_DEFAULT_COMMAND='fd --type file'
 
+    # Custom file opener for lf
+    export OPENER=~/.config/lf/open 
     # icons for lf
     LF_ICONS=$(sed ~/.config/lf/diricons \
         -e '/^[ \t]*#/d' \
