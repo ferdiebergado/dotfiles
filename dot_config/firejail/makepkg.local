@@ -1,0 +1,13 @@
+noblacklist /tmp/yay
+noblacklist ${HOME}/.subversion
+noblacklist /tmp/.X11-unix
+noblacklist ${RUNUSER}/wayland-*
+
+whitelist /tmp/yay
+whitelist ${HOME}/.subversion
+whitelist ${HOME}/.gnupg
+whitelist /tmp/.X11-unix
+whitelist ${RUNUSER}/wayland-*
+
+ignore noexec /tmp
+ignore memory-deny-write-execute
