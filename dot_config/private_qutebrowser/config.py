@@ -190,7 +190,8 @@ config.set("content.javascript.enabled", True, "qute://*/*")
 
 # Force `prefers-color-scheme: dark` colors for websites.
 # Type: Bool
-c.colors.webpage.prefers_color_scheme_dark = False
+#c.colors.webpage.prefers_color_scheme_dark = False
+#colors.webpage.preferred_color_scheme
 
 # Render all web contents using a dark theme. Example configurations
 # from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
@@ -239,10 +240,10 @@ c.fonts.web.family.cursive = None
 
 # search engines
 c.url.searchengines = {
-    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "dg": "https://duckduckgo.com/?q={}",
     "aw": "https://wiki.archlinux.org/?search={}",
     "y": "https://www.youtube.com/results?search_query={}",
-    "g": "https://www.google.com/search?hl=en&source=hp&ie=ISO-8859-l&q={}",
+    "DEFAULT": "https://www.google.com/search?hl=en&source=hp&ie=ISO-8859-l&q={}",
     "ap": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
     "au": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=l&SO=d&PP=50&do_Search=Go",
     "r": "https://www.reddit.com/search/?q={}",
