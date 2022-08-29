@@ -92,5 +92,6 @@ alias mv='advmv -g'
 
 alias e=$EDITOR
 alias ce='chezmoi edit'
+alias ipa='ip -br -c addr show'
 
 # vim: ft=zsh

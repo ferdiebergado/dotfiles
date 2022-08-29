@@ -161,7 +161,7 @@ cmd fasd_dir ${{
 map go :fasd_dir
 
 # copy and move files showing progress using cp-p
-cmd paste $cp-p --lf-paste $id
+#cmd paste $cp-p --lf-paste $id
 
 # jump to folder or file using fzf
 cmd fzf_jump ${{

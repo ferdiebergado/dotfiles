@@ -281,3 +281,12 @@ lfcd () {
         fi
     fi
 }
+
+# View file content without comments
+# Arguments:
+#   $1 - comment character
+#   $2 - file
+nocat() {
+  #grep ^[^\\${1}] $2
+  egrep -v "^$|^[[:space:]]*${1}" "$2"
+}

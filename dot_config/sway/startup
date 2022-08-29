@@ -19,7 +19,7 @@ exec wl-paste --watch clipman store
 exec mako
 
 # Screen locker
-set $locker 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2 --timestr "%H:%M" --datestr "%a %b %d %Y" --font "Ticking Timebomb BB" --font-size 40 -f'
+set $locker 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2 --timestr "%T" --datestr "%a %b %d %Y" --font "Ticking Timebomb BB" --font-size 40 -f'
 exec swayidle -w timeout 600 $locker timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep $locker
 
 # Import gtk theme
@@ -34,11 +34,17 @@ exec swayidle -w timeout 600 $locker timeout 900 'swaymsg "output * dpms off"' r
 # vim: ft=i3config
 
 # Terminal Server
-exec foot -s
+# exec foot -s
 
 # Graphical polkit authentication agent
 #exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec /usr/bin/lxpolkit
+
+# Inhibit idle when a video device is open
+# exec sway-video-idle-inhibit
+
+# window icons
+# exec ~/.cargo/bin/swaycons
 
 # Notify on startup completed
 exec notify-send -i $HOME/Downloads/images/icons/arch-dark.png "$(uname -rs)" "$(systemd-analyze | awk NR==1)"

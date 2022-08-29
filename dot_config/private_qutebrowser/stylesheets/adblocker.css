@@ -3,6 +3,7 @@
 #player-ads,
 .ytd-display-ad-renderer,
 .promotedlink,
+ytd-search-pyv-renderer,
 [data-before-content="advertisement"] {
   display: none !important;
 }

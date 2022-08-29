@@ -6,6 +6,14 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      paywall: open https://12ft.io/proxy?q={url}
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
   bindings.commands:
     global:
       normal:
@@ -56,6 +64,10 @@ settings:
     global: '123456789'
   hints.mode:
     global: number
+  input.insert_mode.auto_leave:
+    global: false
+  input.insert_mode.auto_load:
+    global: true    
   statusbar.padding:
     global:
       bottom: 5
@@ -72,7 +84,11 @@ settings:
       top: 5
   url.default_page:
     global: https://duckduckgo.com/
+  url.open_base_url:
+    global: true
   url.start_pages:
-    global: https://wiki.archlinux.org/index.php/Special:Random
+    global:
+      - https://wiki.archlinux.org/index.php/Special:Random
+      - https://archlinux.org    
   zoom.default:
     global: 96%

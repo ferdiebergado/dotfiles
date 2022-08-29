@@ -248,6 +248,8 @@ c.url.searchengines = {
     "au": "https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&outdated=&SB=l&SO=d&PP=50&do_Search=Go",
     "r": "https://www.reddit.com/search/?q={}",
     "gh": "https://github.com/search?q={}",
+    "n": "https://www.npmjs.com/search?q={}",
+    "dh": "https://hub.docker.com/search?q={}&type=image"
 }
 
 # Add custom css

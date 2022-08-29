@@ -44,6 +44,10 @@ local function set_data(metadata)
   end
 
   local function parse_data(data)
+    -- Return early if data has no hyphen
+    if (string.find(data, "-") == nil) then
+      return {data, nil}
+    end
     local t = {}
     -- TODO: Address multiple hyphen
 

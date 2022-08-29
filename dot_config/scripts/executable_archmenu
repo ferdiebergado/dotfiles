@@ -185,8 +185,8 @@ while read -e option; do
         # Update installed packages
         2)
             update_mirrors
-            #sh -c "yay -Syu"
-            sh -c "yay -Syu --devel --timeupdate"
+            sh -c "yay -Syu"
+            #sh -c "yay -Syu --devel --timeupdate"
             [[ $? -eq 0 ]] && rm -f $APP_CACHE
             wait_input
             ;;

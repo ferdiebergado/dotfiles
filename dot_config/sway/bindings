@@ -4,7 +4,7 @@
 bindsym $mod+Shift+f exec $term lf
 
 # text editor
-bindsym $mod+Shift+n exec $term nvim
+bindsym $mod+Shift+n exec $term -f "JetBrainsMono Nerd Font:pixelsize=18" nvim
 
 # gui file manager
 bindsym $mod+Shift+t exec thunar

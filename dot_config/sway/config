@@ -16,7 +16,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term footclient
+set $term foot
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -66,7 +66,7 @@ output * bg /home/d0np0br3/Pictures/Picture1.jpg fill #222222
 
 input type:keyboard {
     xkb_layout "us"
-    repeat_delay 200
+    repeat_delay 300
     repeat_rate 30 
 }
 
@@ -225,9 +225,10 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    font pango:Envy Code R, Font Awesome 5 Free 10
-    height 32
-    status_padding 4
+    font pango: Iosevka\,Iosevka Nerd Font 10
+    #Envy Code R, Font Awesome 5 Free 10
+    height 26
+    #status_padding 3
     status_edge_padding 4
 
     # # When the status_command prints a new line to stdout, swaybar updates.
@@ -243,12 +244,15 @@ bar {
     #swaybar_command waybar
     colors {
         #separator #666666
-        background  #222222
+        #background  #020202
+        background #303030
         #background #301f1a
-        statusline  #e1e1e1
-        focused_workspace   #393941 #393941 #ffffff
+        # statusline  #b5b3aa
+        statusline #d0d0d0
+        # focused_workspace   #b5b3aa #020202 #b5b3aa
+        focused_workspace   #d0d0d0 #1c1c1c #d0d0d0
         active_workspace    #333333 #333333 #ffffff
-        inactive_workspace  #2c2c2c #2c2c2c #888888
+        inactive_workspace  #2c2c2c #020202 #888888
         urgent_workspace    #2f343a #900000 #ffffff
         binding_mode        #16a085 #2C2C2C #F9FAF9
     }
@@ -264,14 +268,15 @@ client.urgent           #cb7073 #cb7073 #eceff4 #cb7073 #cb7073
 client.placeholder      #000000 #0c0c0c #eceff4 #000000 #0c0c0c
 default_floating_border none
 focus_follows_mouse no
-gaps inner 12
-gaps outer 0
-smart_gaps on
+gaps inner 15
+gaps outer 10
+smart_gaps off
 smart_borders on
 
 ### Misc 
 #
 seat seat0 hide_cursor 5000
+#xwayland disable
 
 ### Load additional configuration file(s)
 #

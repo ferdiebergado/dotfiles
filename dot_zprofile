@@ -43,7 +43,7 @@
 #     clear # against bg artifacts
 # fi
 
-export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/bin/core_perl:/usr/local/bin:/usr/bin:$HOME/.bin:$HOME/.config/scripts:$HOME/bin:$HOME/.config/composer/vendor/bin:$HOME/.yarn/bin:/usr/bin/vendor_perl:$HOME/.symfony/bin"
+export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/bin/core_perl:/usr/local/bin:/usr/bin:$HOME/.bin:$HOME/.config/scripts:$HOME/bin:$HOME/.config/composer/vendor/bin:$HOME/.yarn/bin:/usr/bin/vendor_perl:$HOME/.symfony/bin:$HOME/.cargo/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_MUSIC_DIR="$HOME/Music"
 
@@ -154,7 +154,7 @@ SCCACHE_CACHE_SIZE="1G"
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 
     export XKB_DEFAULT_LAYOUT=us
-    export QT_QPA_PLATFORM=wayland-egl
+    export QT_QPA_PLATFORM=wayland
     # export QT_WAYLAND_FORCE_DPI=physical
     export CLUTTER_BACKEND=wayland
     export SDL_VIDEODRIVER=wayland
@@ -165,7 +165,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 
     export BEMENU_BACKEND=wayland
     export BEMENU_FONT="Coda 10"
-    export BEMENU_HEIGHT=32
+    export BEMENU_HEIGHT=30
 
     export FZF_DEFAULT_COMMAND='fd --type file'
 
@@ -180,9 +180,12 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     LF_ICONS=${LF_ICONS//$'\n'/:}
     export LF_ICONS
 
+    # Set Golang workspace path
+    export GOPATH=$HOME/go
+
     # pipewire
-    export PIPEWIRE_LATENCY=768/48000
-    export PULSE_LATENCY_MSEC=16
+    #export PIPEWIRE_LATENCY=768/48000
+    #export PULSE_LATENCY_MSEC=16
 
     # Uncomment to enable screen sharing
     export XDG_CURRENT_DESKTOP=sway
